@@ -1,216 +1,285 @@
-import { useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowRight, Bookmark, CalendarDays, ChevronRight, Clapperboard, MapPin, Play, Search, Ticket, UserRound } from 'lucide-react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useMemo, useState } from "react";
+import week1 from "./data/week1_questions.json";
+import week2 from "./data/week2_questions.json";
+import week3 from "./data/week3_questions.json";
+import week4 from "./data/week4_questions.json";
+import week5 from "./data/week5_questions.json";
+import week6 from "./data/week6_questions.json";
+import week7 from "./data/week7_questions.json";
+import week8 from "./data/week8_questions.json";
+import week9 from "./data/week9_questions.json";
+import week10 from "./data/week10_questions.json";
+import week11 from "./data/week11_questions.json";
+import week12 from "./data/week12_questions.json";
 
-gsap.registerPlugin(ScrollTrigger)
+const STORAGE_KEY = "nptel-quiz-master-weekly-progress-v1";
+const BANKS = [week1, week2, week3, week4, week5, week6, week7, week8, week9, week10, week11, week12];
 
-const movies = [
-  { title: 'Dune: Part Two', genre: 'SCI-FI · ADVENTURE', rating: '8.8', year: '2024', art: 'dune', tag: 'IMAX EXPERIENCE', description: 'The future is written in the sand.' },
-  { title: 'The Batman', genre: 'ACTION · CRIME', rating: '8.1', year: '2022', art: 'batman', tag: 'DARK & GRITTY', description: 'Unmask the truth.' },
-  { title: 'Interstellar', genre: 'SCI-FI · DRAMA', rating: '8.7', year: '2014', art: 'interstellar', tag: 'FAN FAVOURITE', description: 'Mankind was born on Earth. It was never meant to die here.' },
-  { title: 'Oppenheimer', genre: 'DRAMA · HISTORY', rating: '8.3', year: '2023', art: 'oppenheimer', tag: 'AWARD WINNER', description: 'The world forever changes.' },
-]
-const upcoming = [
-  { title: 'Beyond the Blue', date: 'COMING NOV 14', art: 'blue' },
-  { title: 'The Last Signal', date: 'COMING NOV 21', art: 'signal' },
-  { title: 'Neon Horizon', date: 'COMING DEC 05', art: 'neon' },
-]
-
-function MovieCard({ movie, upcomingMovie = false }) {
-  return (
-    <article className={`movie-card ${upcomingMovie ? 'upcoming-card' : ''}`}>
-      <div className={`poster-art art-${movie.art}`}>
-        <div className="poster-grain" />
-        <span className="poster-kicker">{movie.tag || 'COMING SOON'}</span>
-        <div className="poster-title">{movie.title}</div>
-        <span className="poster-bottom">{movie.year || movie.date}</span>
-        {!upcomingMovie && <button className="poster-play" aria-label={`Preview ${movie.title}`} onClick={() => window.alert(`Preview for ${movie.title} — demo interaction.`)}><Play size={16} fill="currentColor" /></button>}
-      </div>
-      <div className="movie-card-info">
-        <div>
-          <h3>{movie.title}</h3>
-          <p>{upcomingMovie ? movie.date : movie.genre}</p>
-        </div>
-        {!upcomingMovie && <span className="rating">★ {movie.rating}</span>}
-      </div>
-    </article>
-  )
+function getQuestions(bank) {
+  return (bank?.questions || []).filter((q) =>
+    q && typeof q.id === "string" &&
+    typeof q.question === "string" &&
+    ["single", "multiple", "numeric"].includes(q.type) &&
+    (q.type === "numeric" || (Array.isArray(q.options) && q.options.length > 0))
+  );
 }
 
-function HomePage() {
-  const [saved, setSaved] = useState(false)
-  const [query, setQuery] = useState('')
-  const filtered = movies.filter(m => m.title.toLowerCase().includes(query.toLowerCase()))
-  return (
-    <main className="home-page" id="home">
-      <nav className="nav-shell">
-        <a className="wordmark" href="#home" aria-label="MovieLanche home"><span className="logo-mark"><Clapperboard size={19} /></span>MOVIE<span>LANCHE</span></a>
-        <div className="nav-links"><a className="active" href="#home">Home</a><a href="#now-showing">Movies</a><a href="#cinemas">Cinemas</a><a href="#coming-soon">Coming Soon</a></div>
-        <div className="nav-actions">
-          <label className="search-box"><Search size={16} /><input aria-label="Search movies" placeholder="Find a movie" value={query} onChange={e => setQuery(e.target.value)} /></label>
-          <button className="icon-button" aria-label="Saved movies" onClick={() => setSaved(!saved)}><Bookmark size={18} fill={saved ? 'currentColor' : 'none'} /></button>
-          <button className="sign-in" onClick={() => window.alert('Sign in is a placeholder in this demo.')}>Sign in <UserRound size={15} /></button>
-        </div>
-      </nav>
-
-      <section className="home-hero">
-        <div className="hero-backdrop" />
-        <div className="hero-orb orb-one" /><div className="hero-orb orb-two" />
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-line" /> THE BIG SCREEN, REIMAGINED</div>
-          <h1>Stories worth<br /><em>stepping into.</em></h1>
-          <p>Find your next obsession. From edge-of-your-seat premieres to the stories that stay with you long after the credits roll.</p>
-          <div className="hero-meta"><span>✦ CURATED FOR YOU</span><span className="meta-dot" /><span>NEW EXPERIENCES WEEKLY</span></div>
-          <div className="hero-buttons"><a href="#now-showing" className="button-primary">Explore movies <ArrowRight size={17} /></a><button className="button-ghost" onClick={() => window.alert('Trailer playback is a demo placeholder.')}><Play size={15} /> Watch trailer</button></div>
-        </div>
-        <div className="hero-feature-card"><span className="feature-label">YOUR NEXT MOVIE NIGHT</span><div className="feature-icon"><Ticket size={20} /></div><strong>Make it a moment.</strong><span>Great stories. Better seats.</span><a href="#now-showing">Find a film <ChevronRight size={14} /></a></div>
-        <div className="hero-index"><span>01</span><i /><span>04</span></div>
-      </section>
-
-      <section className="section movie-section" id="now-showing">
-        <div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> THE LINEUP</div><h2>Now <em>showing.</em></h2><p>Big-screen stories. Handpicked for your next night out.</p></div><a className="text-link" href="#now-showing">View all films <ArrowRight size={16} /></a></div>
-        {filtered.length ? <div className="movie-grid">{filtered.map(movie => <MovieCard key={movie.title} movie={movie} />)}</div> : <div className="empty-state">No demo movies match “{query}”. Try another title.</div>}
-      </section>
-
-      <section className="midnight-banner" id="cinemas">
-        <div className="banner-glow" /><div className="banner-content"><span className="eyebrow"><span className="eyebrow-line" /> MORE THAN A MOVIE</span><h2>Make room for<br /><em>the extraordinary.</em></h2><p>Sound that surrounds you. Screens that pull you in. Moments that deserve the big screen.</p><button className="button-primary" onClick={() => window.alert('Cinema discovery is a demo placeholder.')}>Discover the experience <ArrowRight size={17} /></button></div><div className="banner-stamp"><Clapperboard size={29} /><span>YOUR SEAT<br />IS WAITING</span></div>
-      </section>
-
-      <section className="section coming-section" id="coming-soon">
-        <div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> ON THE HORIZON</div><h2>Coming <em>soon.</em></h2><p>Keep these dates open. Something special is on its way.</p></div><span className="calendar-note"><CalendarDays size={16} /> YOUR WATCHLIST STARTS HERE</span></div>
-        <div className="upcoming-grid">{upcoming.map(movie => <MovieCard key={movie.title} movie={movie} upcomingMovie />)}</div>
-      </section>
-
-      <footer className="footer"><a className="wordmark" href="#home"><span className="logo-mark"><Clapperboard size={18} /></span>MOVIE<span>LANCHE</span></a><p>For the love of the big screen.</p><div className="footer-links"><a href="#home">Home</a><a href="#now-showing">Movies</a><a href="#cinemas">Cinemas</a><a href="#coming-soon">Coming soon</a></div><small>© 2026 MOVIELANCHE. MADE FOR MOVIE PEOPLE.</small></footer>
-    </main>
-  )
+function readProgress() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    return parsed && parsed.version === 1 && parsed.weeks && typeof parsed.weeks === "object"
+      ? parsed.weeks : {};
+  } catch {
+    return {};
+  }
 }
 
-function CinematicIntro({ homePageRef }) {
-  const sectionRef = useRef(null)
-  const sceneRef = useRef(null)
-  const imageRef = useRef(null)
-  const screenGlowRef = useRef(null)
-  const indicatorRef = useRef(null)
-  const [reducedMotion, setReducedMotion] = useState(false)
+function normalizeAttempt(saved, questions) {
+  if (!saved || saved.version !== 1 || !Array.isArray(saved.questionIds)) return null;
+  const ids = questions.map((q) => q.id);
+  if (ids.length !== saved.questionIds.length || ids.some((id, i) => id !== saved.questionIds[i])) return null;
 
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(media.matches)
-    const onChange = e => setReducedMotion(e.matches)
-    media.addEventListener?.('change', onChange)
-    return () => media.removeEventListener?.('change', onChange)
-  }, [])
+  const answers = {};
+  for (const q of questions) {
+    const entry = saved.answers?.[q.id];
+    if (!entry || typeof entry !== "object") continue;
+    const selected = Array.isArray(entry.selected)
+      ? entry.selected.filter((v) => q.type === "numeric" ? false : q.options.some((o) => o.id === v))
+      : [];
+    const numeric = typeof entry.numeric === "string" ? entry.numeric.slice(0, 100) : "";
+    answers[q.id] = {
+      selected,
+      numeric,
+      submitted: Boolean(entry.submitted),
+      isCorrect: Boolean(entry.submitted && entry.isCorrect),
+    };
+  }
+  const currentIndex = Number.isInteger(saved.currentIndex)
+    ? Math.max(0, Math.min(saved.currentIndex, Math.max(questions.length - 1, 0))) : 0;
+  return { answers, currentIndex, finished: Boolean(saved.finished) };
+}
 
-  useEffect(() => {
-    const section = sectionRef.current
-    const scene = sceneRef.current
-    const image = imageRef.current
-    const glow = screenGlowRef.current
-    const indicator = indicatorRef.current
-    const homePage = homePageRef?.current
-    if (!section || !scene || !image || !glow || !homePage) return
+function getCorrectIds(question) {
+  return Array.isArray(question.correctAnswers) ? question.correctAnswers : [];
+}
 
-    // Keep the homepage layered behind the theatre at viewport center during the intro.
-    // At the end of the pinned sequence, hand it back to normal document flow without a vertical entrance.
-    const showHomeInDocumentFlow = () => {
-      const top = window.scrollY
-      homePage.style.position = 'absolute'
-      homePage.style.top = `${top}px`
-      homePage.style.left = '0'
-      homePage.style.right = '0'
-      homePage.style.width = '100%'
-      homePage.style.zIndex = '0'
-      homePage.style.pointerEvents = 'auto'
-    }
-    const keepHomeCenteredBehindScene = () => {
-      homePage.style.position = 'fixed'
-      homePage.style.top = '0'
-      homePage.style.left = '0'
-      homePage.style.right = '0'
-      homePage.style.width = '100%'
-      homePage.style.zIndex = '0'
-      homePage.style.pointerEvents = 'none'
-    }
-
-    const ctx = gsap.context(() => {
-      if (reducedMotion) {
-        gsap.set(scene, { autoAlpha: 0 })
-        gsap.set(homePage, { autoAlpha: 1, clearProps: 'transform,filter,pointerEvents' })
-        return
-      }
-      // Keep the homepage fully hidden until the theatre screen has expanded past the viewport.
-      keepHomeCenteredBehindScene()
-      gsap.set(homePage, {
-        autoAlpha: 0,
-        scale: 0.985,
-        filter: 'blur(12px)',
-        transformOrigin: '50% 50%',
-        pointerEvents: 'none',
-      })
-      const tl = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: '+=3800',
-          scrub: 0.7,
-          // Pin the whole section so its scroll spacer reliably holds the homepage below the scene.
-          pin: section,
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onLeave: showHomeInDocumentFlow,
-          onEnterBack: keepHomeCenteredBehindScene,
-        },
-      })
-      tl.to(indicator, { autoAlpha: 0, y: 18, duration: 0.12 }, 0)
-        .to(image, { scale: 1.16, duration: 0.20, transformOrigin: '50% 42%' }, 0)
-        .to(image, { scale: 1.48, duration: 0.24, transformOrigin: '50% 42%' }, 0.20)
-        .to(image, { scale: 3.35, duration: 0.39, transformOrigin: '50% 42%' }, 0.44)
-        .to(glow, { opacity: 0.92, scale: 1.12, duration: 0.10 }, 0.78)
-        // Hold the screen-filling moment, then dissolve the theatre and reveal the homepage from its center.
-        .to(glow, { opacity: 0, duration: 0.08 }, 0.88)
-        .to(scene, { autoAlpha: 0, duration: 0.08 }, 0.92)
-        .to(homePage, {
-          autoAlpha: 1,
-          scale: 1,
-          filter: 'blur(0px)',
-          duration: 0.08,
-          ease: 'power2.out',
-          onStart: () => { homePage.style.pointerEvents = 'auto' },
-          onReverseComplete: () => { homePage.style.pointerEvents = 'none' },
-        }, 0.92)
-    }, section)
-    const refresh = () => ScrollTrigger.refresh()
-    window.addEventListener('load', refresh, { once: true })
-    const resizeObserver = new ResizeObserver(() => ScrollTrigger.refresh())
-    resizeObserver.observe(section)
-    return () => {
-      resizeObserver.disconnect()
-      window.removeEventListener('load', refresh)
-      ctx.revert()
-      gsap.set(homePage, { clearProps: 'position,top,left,right,width,zIndex,pointerEvents,opacity,visibility,transform,filter' })
-    }
-  }, [reducedMotion, homePageRef])
-
-  return (
-    <section className={`cinematic-section ${reducedMotion ? 'motion-reduced' : ''}`} ref={sectionRef} aria-label="Cinematic entrance">
-      <div className="cinematic-scene" ref={sceneRef}>
-        <div className="scene-vignette" />
-        <img ref={imageRef} className="theatre-image" src="/images/movielanche-theatre.png" alt="A modern cinema auditorium with a glowing blue MOVIELANCHE screen" fetchPriority="high" />
-        <div className="scene-grain" />
-        <div className="screen-entry-glow" ref={screenGlowRef} />
-        <div className="intro-brand"><span className="intro-brand-line" /> A NEW WAY TO EXPERIENCE CINEMA <span className="intro-brand-line" /></div>
-        <div className="scroll-cue" ref={indicatorRef}><span>SCROLL TO ENTER</span><div className="scroll-cue-icon"><ArrowDown size={15} /></div></div>
-        {reducedMotion && <a className="reduced-enter" href="#home">Enter MovieLanche <ArrowRight size={16} /></a>}
-      </div>
-    </section>
-  )
+function isAnswerCorrect(question, answer) {
+  if (question.type === "numeric") {
+    const expected = Number(question.answer);
+    const actual = Number(String(answer?.numeric ?? "").trim());
+    return String(answer?.numeric ?? "").trim() !== "" &&
+      Number.isFinite(actual) && Number.isFinite(expected) && actual === expected;
+  }
+  const expected = getCorrectIds(question);
+  const selected = answer?.selected || [];
+  return expected.length > 0 && selected.length === expected.length &&
+    selected.every((id) => expected.includes(id));
 }
 
 export default function App() {
-  const homePageRef = useRef(null)
-  return <><CinematicIntro homePageRef={homePageRef} /><div className="home-reveal" ref={homePageRef}><HomePage /></div></>
+  const [mode, setMode] = useState("dashboard");
+  const [activeWeek, setActiveWeek] = useState(null);
+  const [weeklyAnswers, setWeeklyAnswers] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [weeklyProgress, setWeeklyProgress] = useState(() => readProgress());
+
+  const bankQuestions = activeWeek ? getQuestions(activeWeek) : [];
+  const currentQuestion = bankQuestions[currentIndex];
+  const currentAnswer = currentQuestion ? weeklyAnswers[currentQuestion.id] : null;
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, weeks: weeklyProgress }));
+    } catch {
+      // Private browsing or storage limits should not break the quiz.
+    }
+  }, [weeklyProgress]);
+
+  const weeklyStats = useMemo(() => BANKS.map((bank, index) => {
+    const questions = getQuestions(bank);
+    const saved = weeklyProgress[String(bank.week)];
+    const valid = normalizeAttempt(saved, questions);
+    const answered = valid ? questions.filter((q) => valid.answers[q.id]?.submitted).length : 0;
+    const score = valid ? questions.filter((q) => valid.answers[q.id]?.submitted && valid.answers[q.id]?.isCorrect).length : 0;
+    return { week: bank.week, title: bank.title || `Week ${bank.week}`, count: questions.length, answered, score, started: Boolean(valid), finished: Boolean(valid?.finished) };
+  }), [weeklyProgress]);
+
+  function openWeek(bank) {
+    const questions = getQuestions(bank);
+    if (!questions.length) {
+      setActiveWeek(bank);
+      setWeeklyAnswers({});
+      setCurrentIndex(0);
+      setFinished(false);
+      setMode("weekly");
+      return;
+    }
+    const saved = normalizeAttempt(weeklyProgress[String(bank.week)], questions);
+    setActiveWeek(bank);
+    setWeeklyAnswers(saved?.answers || {});
+    setCurrentIndex(saved?.currentIndex || 0);
+    setFinished(Boolean(saved?.finished));
+    setMode("weekly");
+  }
+
+  function saveWeekly(nextAnswers, nextIndex = currentIndex, nextFinished = finished) {
+    if (!activeWeek) return;
+    const questions = getQuestions(activeWeek);
+    const record = {
+      version: 1,
+      questionIds: questions.map((q) => q.id),
+      answers: nextAnswers,
+      currentIndex: nextIndex,
+      finished: nextFinished,
+      updatedAt: new Date().toISOString(),
+    };
+    setWeeklyProgress((prev) => ({ ...prev, [String(activeWeek.week)]: record }));
+  }
+
+  function selectWeeklyOption(optionId) {
+    if (!currentQuestion || currentAnswer?.submitted) return;
+    const old = currentAnswer?.selected || [];
+    const selected = currentQuestion.type === "multiple"
+      ? (old.includes(optionId) ? old.filter((id) => id !== optionId) : [...old, optionId])
+      : [optionId];
+    const next = { ...weeklyAnswers, [currentQuestion.id]: { selected, numeric: "", submitted: false, isCorrect: false } };
+    setWeeklyAnswers(next);
+    saveWeekly(next);
+  }
+
+  function submitWeekly() {
+    if (!currentQuestion || currentAnswer?.submitted) return;
+    if (currentQuestion.type === "numeric" && !String(currentAnswer?.numeric ?? "").trim()) return;
+    if (currentQuestion.type !== "numeric" && !(currentAnswer?.selected || []).length) return;
+    const correct = isAnswerCorrect(currentQuestion, currentAnswer);
+    const next = { ...weeklyAnswers, [currentQuestion.id]: { ...currentAnswer, submitted: true, isCorrect: correct } };
+    setWeeklyAnswers(next);
+    saveWeekly(next);
+  }
+
+  function updateNumeric(value) {
+    if (!currentQuestion || currentAnswer?.submitted) return;
+    const next = { ...weeklyAnswers, [currentQuestion.id]: { selected: [], numeric: value, submitted: false, isCorrect: false } };
+    setWeeklyAnswers(next);
+    saveWeekly(next);
+  }
+
+  function nextWeekly() {
+    if (!activeWeek) return;
+    if (currentIndex < bankQuestions.length - 1) {
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      saveWeekly(weeklyAnswers, nextIndex, false);
+    } else {
+      setFinished(true);
+      saveWeekly(weeklyAnswers, currentIndex, true);
+    }
+  }
+
+  function retryWeek() {
+    const clean = {};
+    setWeeklyAnswers(clean);
+    setCurrentIndex(0);
+    setFinished(false);
+    saveWeekly(clean, 0, false);
+  }
+
+  function backDashboard() {
+    setMode("dashboard");
+    setActiveWeek(null);
+  }
+
+  const weeklyScore = bankQuestions.filter((q) => weeklyAnswers[q.id]?.submitted && weeklyAnswers[q.id]?.isCorrect).length;
+  const progressPercent = bankQuestions.length ? ((currentIndex + 1) / bankQuestions.length) * 100 : 0;
+
+  return (
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 sm:px-8">
+      <div className="mx-auto max-w-6xl">
+        <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-blue-400">Interactive learning</p>
+            <h1 className="text-3xl font-bold sm:text-4xl">NPTEL Quiz Master</h1>
+            <p className="mt-3 text-slate-400">Practice prepared NPTEL questions from Weeks 1–12.</p>
+          </div>
+          {mode !== "dashboard" && <button onClick={backDashboard} className="rounded-xl border border-slate-700 px-4 py-2 text-sm hover:bg-slate-900">← Dashboard</button>}
+        </header>
+
+        {mode === "dashboard" && (
+          <>
+            <section className="mb-8 grid gap-4">
+              <button onClick={() => setMode("weeklyHome")} className="rounded-2xl border border-blue-800 bg-blue-950/30 p-6 text-left transition hover:border-blue-500">
+                <div className="mb-4 text-3xl">📚</div><h2 className="text-xl font-bold">Weekly Question Bank</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-400">Practice prepared questions from Weeks 1–12. Works locally in your browser.</p>
+                <span className="mt-5 inline-block font-semibold text-blue-300">Choose a week →</span>
+              </button>
+            </section>
+            <p className="text-sm text-slate-500">Weekly question banks are loaded from static JSON files; opening a week does not call the backend.</p>
+          </>
+        )}
+
+        {mode === "weeklyHome" && (
+          <section>
+            <div className="mb-5"><h2 className="text-2xl font-bold">Weekly Question Bank</h2><p className="mt-2 text-slate-400">Choose any week. Progress is saved in this browser.</p></div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {weeklyStats.map((stat) => (
+                <button key={stat.week} onClick={() => openWeek(BANKS[stat.week - 1])} className="rounded-2xl border border-slate-800 bg-slate-900 p-5 text-left transition hover:border-blue-600">
+                  <div className="flex items-start justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-400">Week {stat.week}</p><h3 className="mt-1 text-lg font-semibold">{stat.title}</h3></div><span className="rounded-full bg-slate-800 px-3 py-1 text-xs">{stat.count} questions</span></div>
+                  <div className="mt-5 h-2 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-green-500" style={{ width: `${stat.count ? stat.answered / stat.count * 100 : 0}%` }} /></div>
+                  <div className="mt-3 flex justify-between text-xs text-slate-400"><span>{stat.answered}/{stat.count} answered</span><span>{stat.finished ? `Completed · ${stat.score}/${stat.count}` : stat.started ? `Score ${stat.score}` : "Not started"}</span></div>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {mode === "weekly" && activeWeek && (
+          bankQuestions.length === 0 ? <section className="rounded-2xl border border-slate-800 bg-slate-900 p-8"><h2 className="text-xl font-bold">{activeWeek.title || `Week ${activeWeek.week}`}</h2><p className="mt-3 text-slate-400">This week has no usable questions.</p></section>
+          : finished ? (
+            <section className="mx-auto max-w-2xl rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center">
+              <div className="text-5xl">🎉</div><h2 className="mt-4 text-3xl font-bold">Quiz completed</h2>
+              <p className="mt-3 text-slate-400">{activeWeek.title || `Week ${activeWeek.week}`}</p>
+              <p className="mt-8 text-sm text-slate-400">Final score</p><p className="mt-2 text-5xl font-bold text-blue-400">{weeklyScore}/{bankQuestions.length}</p>
+              <p className="mt-3 text-xl font-semibold">{Math.round(weeklyScore / bankQuestions.length * 100)}%</p>
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><button onClick={retryWeek} className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500">Retry Quiz</button><button onClick={backDashboard} className="rounded-xl border border-slate-700 px-6 py-3 font-semibold hover:bg-slate-800">Back to Dashboard</button></div>
+            </section>
+          ) : (
+            <>
+              <section className="mb-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+                <div className="mb-3 flex justify-between gap-3 text-sm"><span className="text-slate-400">{activeWeek.title || `Week ${activeWeek.week}`} · Question {currentIndex + 1} of {bankQuestions.length}</span><span className="font-semibold text-blue-400">Score: {weeklyScore}</span></div>
+                <div className="h-2 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-blue-500 transition-all" style={{ width: `${progressPercent}%` }} /></div>
+              </section>
+              <section className="rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-8">
+                <div className="mb-5 flex flex-wrap gap-2"><span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-300">{currentQuestion.type === "numeric" ? "Numerical answer" : currentQuestion.type === "multiple" ? "Select all that apply" : "Single choice"}</span><span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">ID: {currentQuestion.id}</span></div>
+                <h2 className="mb-7 whitespace-pre-wrap text-xl font-semibold leading-8 sm:text-2xl">{currentQuestion.question}</h2>
+                {currentQuestion.type === "numeric" ? (
+                  <input type="number" inputMode="decimal" value={currentAnswer?.numeric || ""} disabled={currentAnswer?.submitted} onChange={(e) => updateNumeric(e.target.value)} placeholder="Enter numerical answer" className="w-full rounded-xl border border-slate-700 bg-slate-950 p-4 outline-none focus:border-blue-500 disabled:opacity-60" />
+                ) : (
+                  <div className="space-y-3">{currentQuestion.options.map((option) => {
+                    const selected = (currentAnswer?.selected || []).includes(option.id);
+                    const submitted = Boolean(currentAnswer?.submitted);
+                    const correct = getCorrectIds(currentQuestion).includes(option.id);
+                    let cls = "border-slate-700 bg-slate-950 hover:border-blue-500";
+                    if (selected && !submitted) cls = "border-blue-500 bg-blue-500/10";
+                    if (submitted && correct) cls = "border-green-500 bg-green-950/40";
+                    else if (submitted && selected) cls = "border-red-500 bg-red-950/40";
+                    return <button key={option.id} type="button" disabled={submitted} onClick={() => selectWeeklyOption(option.id)} className={`flex w-full items-start gap-3 rounded-xl border p-4 text-left transition disabled:cursor-default ${cls}`}><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-sm font-bold">{option.id.toUpperCase()}</span><span className="flex-1 whitespace-pre-wrap pt-1 text-sm leading-6 sm:text-base">{option.text}</span>{submitted && correct && <span className="font-bold text-green-400">✓</span>}{submitted && selected && !correct && <span className="font-bold text-red-400">✕</span>}</button>;
+                  })}</div>
+                )}
+                {currentAnswer?.submitted && (
+                  <div className={`mt-6 rounded-xl border p-5 ${currentAnswer.isCorrect ? "border-green-700 bg-green-950/30" : "border-red-800 bg-red-950/30"}`}>
+                    <h3 className={`text-lg font-bold ${currentAnswer.isCorrect ? "text-green-400" : "text-red-400"}`}>{currentAnswer.isCorrect ? "✓ Correct!" : "✕ Incorrect"}</h3>
+                    <p className="mt-3 text-sm leading-6"><strong>Accepted answer: </strong>{currentQuestion.type === "numeric" ? (currentQuestion.answer ?? "Not provided") : getCorrectIds(currentQuestion).map((id) => currentQuestion.options.find((o) => o.id === id)?.id?.toUpperCase() || id).join(", ") || "Not provided"}</p>
+                    <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-300">{currentQuestion.explanation?.trim() || "No explanation was provided in this question-bank file."}</p>
+                  </div>
+                )}
+                <div className="mt-7 flex flex-col justify-between gap-3 sm:flex-row"><button onClick={backDashboard} className="rounded-xl border border-slate-700 px-5 py-3 text-sm hover:bg-slate-800">Exit to Dashboard</button>{!currentAnswer?.submitted ? <button onClick={submitWeekly} disabled={currentQuestion.type === "numeric" ? !String(currentAnswer?.numeric ?? "").trim() : !(currentAnswer?.selected || []).length} className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40">Submit Answer</button> : <button onClick={nextWeekly} className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500">{currentIndex === bankQuestions.length - 1 ? "View Results →" : "Next Question →"}</button>}</div>
+              </section>
+            </>
+          )
+        )}
+
+      </div>
+    </main>
+  );
 }

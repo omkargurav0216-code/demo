@@ -1,0 +1,304 @@
+{
+  "week": 11,
+  "title": "Week 11",
+  "questions": [
+    {
+      "id": "week11-q1",
+      "type": "single",
+      "question": "In the context of data privacy, which right requires companies to delete user data when requested?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Right to intellectual property retention"
+        },
+        {
+          "id": "b",
+          "text": "Right to be forgotten"
+        },
+        {
+          "id": "c",
+          "text": "Right to data portability"
+        },
+        {
+          "id": "d",
+          "text": "Right to transparency"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Governance [9:56-11:50] - The right to be forgotten (or the right to erasure) gives the data subject the right to erasure of their personal data."
+    },
+    {
+      "id": "week11-q2",
+      "type": "single",
+      "question": "Which OECD AI Principle states that AI systems should operate safely and function properly under normal use, misuse, or adverse conditions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inclusive growth, sustainable development and well-being"
+        },
+        {
+          "id": "b",
+          "text": "Transparency and explainability"
+        },
+        {
+          "id": "c",
+          "text": "Robustness, security, and safety"
+        },
+        {
+          "id": "d",
+          "text": "Accountability"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Governance [18:12-19:00] - Robustness, Security, and Safety states that AI systems should be robust, secure, and safe throughout their entire lifecycle."
+    },
+    {
+      "id": "week11-q3",
+      "type": "multiple",
+      "question": "Under the EU AI Act, which application category is classified as an 'unacceptable risk'? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Social Scoring Systems"
+        },
+        {
+          "id": "b",
+          "text": "Critical Infrastructure Management"
+        },
+        {
+          "id": "c",
+          "text": "Law Enforcement"
+        },
+        {
+          "id": "d",
+          "text": "Cognitive Behavioural Manipulation"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "d"
+      ],
+      "explanation": "AI Governance [25:22-26:56] - According to the EU AI Act, social scoring and cognitive behavioural manipulation are unacceptable risks."
+    },
+    {
+      "id": "week11-q4",
+      "type": "single",
+      "question": "When a system like an email spam server filters out malicious messages in the background without requiring user intervention, which type of threat mitigation is it demonstrating?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Educating and training users"
+        },
+        {
+          "id": "b",
+          "text": "Providing interface-level threat warnings"
+        },
+        {
+          "id": "c",
+          "text": "Silently eliminating the threat"
+        },
+        {
+          "id": "d",
+          "text": "Enforcing legal regulations"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Governance [4:41-8:17] - Spam servers operate behind the scenes to remove unwanted or dangerous emails automatically."
+    },
+    {
+      "id": "week11-q5",
+      "type": "single",
+      "question": "What specific transparency requirement does the EU AI Act impose on deepfakes or generated media?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They must be exclusively hosted on European-based servers."
+        },
+        {
+          "id": "b",
+          "text": "They must be clearly labeled as AI-generated."
+        },
+        {
+          "id": "c",
+          "text": "They must not be published on the internet at all."
+        },
+        {
+          "id": "d",
+          "text": "They must be heavily taxed before distribution."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Governance [28:00-29:35] - The act mandates that any images, audio, or video files generated or modified by AI must be explicitly labeled."
+    },
+    {
+      "id": "week11-q6",
+      "type": "single",
+      "question": "In the AI Value Chain, who is considered the \"deployer\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The person or organization that uses the AI systems under its own authority."
+        },
+        {
+          "id": "b",
+          "text": "The original engineering team that built the AI model."
+        },
+        {
+          "id": "c",
+          "text": "The individual who imports the AI system into the EU market."
+        },
+        {
+          "id": "d",
+          "text": "The government official responsible for writing the regulations."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Governance [30:12-31:55]: The deployer is the persons that use AI systems under their authority."
+    },
+    {
+      "id": "week11-q7",
+      "type": "single",
+      "question": "To satisfy the OECD principle of \"accountability,\" AI actors should ensure \"traceability\" throughout the system's lifecycle. What does this specifically help achieve?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It allows companies to track user information that can lead to their location, such as IP addresses."
+        },
+        {
+          "id": "b",
+          "text": "It ensures one can trace back how data was collected and how it influences decision-making."
+        },
+        {
+          "id": "c",
+          "text": "It guarantees the system uses minimal computing power and has a low carbon footprint."
+        },
+        {
+          "id": "d",
+          "text": "It allows the AI to completely wipe its training period after a set period."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Governance [19:02-19:53]: Traceability ensures that if an AI makes a particular choice, auditors can trace the datasets and processes that led to that specific outcome."
+    },
+    {
+      "id": "week11-q8",
+      "type": "single",
+      "question": "In the SaGE framework, how is semantic inconsistency functionally defined?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Failing to identify commonsense reasoning violations within a single prompt."
+        },
+        {
+          "id": "b",
+          "text": "Generating factually incorrect statements in response to a factual prompt."
+        },
+        {
+          "id": "c",
+          "text": "Utilizing grammatically disparate structures to answer identical prompts."
+        },
+        {
+          "id": "d",
+          "text": "Providing semantically disparate answers to semantically equivalent prompts."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Research Overview: SaGE- Quantifying moral consistency in LLMs [2:27-2:52] - Semantic inconsistency is an LLM generating contradictory or different answers when presented with semantically equivalent prompts."
+    },
+    {
+      "id": "week11-q9",
+      "type": "single",
+      "question": "In the SaGE framework, what does a higher semantic graph entropy indicate about the LLM?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The model is exhibiting higher semantic consistency."
+        },
+        {
+          "id": "b",
+          "text": "The model is exhibiting higher semantic inconsistency."
+        },
+        {
+          "id": "c",
+          "text": "The model is exhibiting lower syntactic divergence."
+        },
+        {
+          "id": "d",
+          "text": "The model is exhibiting lower fundamental judgment."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Research Overview: SaGE- Quantifying moral consistency in LLMs [15:32-18:43]: Higher graph entropy indicates greater randomness among the generated responses, which means the model's answers are inconsistent."
+    },
+    {
+      "id": "week11-q10",
+      "type": "single",
+      "question": "A developer attempts to reduce an LLM's tendency to give contradictory answers to moral questions by lowering the generation temperature. Based on SaGE, what is the expected outcome?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The consistency score will improve to near perfection."
+        },
+        {
+          "id": "b",
+          "text": "The consistency score will perfectly match human scores."
+        },
+        {
+          "id": "c",
+          "text": "The consistency score will drop to near zero."
+        },
+        {
+          "id": "d",
+          "text": "The consistency score will remain largely unaffected."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Research Overview: SaGE- Quantifying moral consistency in LLMs [21:52-22:44]: The SaGE study demonstrated that changing the temperature does not significantly alter the model’s consistency."
+    },
+    {
+      "id": "week11-q11",
+      "type": "single",
+      "question": "According to the SaGE framework, how does an LLM's accuracy on standard commonsense reasoning benchmarks correlate with its moral consistency?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accuracy negatively correlates with consistency."
+        },
+        {
+          "id": "b",
+          "text": "Accuracy does not correlate with consistency."
+        },
+        {
+          "id": "c",
+          "text": "Accuracy strictly correlates with consistency."
+        },
+        {
+          "id": "d",
+          "text": "Accuracy conditionally correlates with consistency."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Research Overview: SaGE- Quantifying moral consistency in LLMs [22:45-23:58]: The SaGE study demonstrated that a model's benchmark accuracy does not correlate with its consistency at all."
+    }
+  ]
+}

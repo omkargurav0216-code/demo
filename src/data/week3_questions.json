@@ -1,0 +1,347 @@
+{
+  "week": 3,
+  "title": "Week 3",
+  "questions": [
+    {
+      "id": "week3-q1",
+      "type": "single",
+      "question": "Match the unlearning method to their corresponding concept. 1) Exact unlearning",
+      "options": [
+        {
+          "id": "i",
+          "text": "Unlearned model and retrained model are distributionally close 2) Unlearning via Differential Privacy ii) The forget set is clearly defined 3) Example Unlearning iii) The forget set is not clearly defined 4) Concept Unlearning iv) Unlearned model and retrained model are distributionally identical"
+        },
+        {
+          "id": "a",
+          "text": "1 -> i, 2-> iv, 3-> iii, 4-> ii"
+        },
+        {
+          "id": "b",
+          "text": "1 -> i, 2-> iv, 3-> ii, 4-> iii"
+        },
+        {
+          "id": "c",
+          "text": "1 -> iv, 2-> i, 3-> iii, 4-> ii"
+        },
+        {
+          "id": "d",
+          "text": "1 -> iv, 2-> i, 3-> ii, 4-> iii"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Answers are found throughout the Unlearning and Approximate Unlearning lectures - ● Exact Unlearning - Unlearned model & retrained model to be distributionally identical. ● Unlearning via Differential Privacy - Unlearned model & retrained model to be distributionally close. ● Example Unlearning - Train, retain, and forget sets are often clearly defined. ● Concept Unlearning - Train, retain, or forget sets are poorly specified or just not ● specified at all."
+    },
+    {
+      "id": "week3-q2",
+      "type": "single",
+      "question": "What is the primary goal of “Machine Unlearning”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To increase the training speed of a model."
+        },
+        {
+          "id": "b",
+          "text": "To add more data to an existing model without retraining."
+        },
+        {
+          "id": "c",
+          "text": "To remove the influence of specific training data from a trained model."
+        },
+        {
+          "id": "d",
+          "text": "To improve the accuracy of a model on new, unseen data."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Unlearning [8:41-9:36] - Machine Unlearning can be broadly described as removing the influences of training data from a trained model."
+    },
+    {
+      "id": "week3-q3",
+      "type": "single",
+      "question": "What is GDPR’s Article 17 about in the context of Machine Learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Right to be remembered"
+        },
+        {
+          "id": "b",
+          "text": "Right to be forgotten"
+        },
+        {
+          "id": "c",
+          "text": "Right to be modified"
+        },
+        {
+          "id": "d",
+          "text": "Right to be distributed"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Unlearning [11:35-15:50] - GDPR’s Article 17 is the right to erasure or right to be forgotten."
+    },
+    {
+      "id": "week3-q4",
+      "type": "single",
+      "question": "In the SISA framework, what is the benefit of using “shards” and “slices”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It increases the overall accuracy of the model."
+        },
+        {
+          "id": "b",
+          "text": "It ensures that unlearned data never contributes to other components."
+        },
+        {
+          "id": "c",
+          "text": "It allows the model to learn from toxic data safely."
+        },
+        {
+          "id": "d",
+          "text": "It eliminates the need for any retraining."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Unlearning [29:44-30:02] - Algorithm is the proof: SISA by design unlearned data never contributed to other components (split)."
+    },
+    {
+      "id": "week3-q5",
+      "type": "single",
+      "question": "What is “Membership Inference Attack”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To distinguish whether specific training data was used to train a model."
+        },
+        {
+          "id": "b",
+          "text": "To add new members to a training dataset."
+        },
+        {
+          "id": "c",
+          "text": "To speed up the unlearning process."
+        },
+        {
+          "id": "d",
+          "text": "To verify the architecture of the model."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Approximate Unlearning [11:55-13:48] - Membership inference attacks aim to distinguish training data from unseen data."
+    },
+    {
+      "id": "week3-q6",
+      "type": "single",
+      "question": "Which unlearning method involves increasing the training loss on the forget set?",
+      "options": [
+        {
+          "id": "a",
+          "text": "KL Divergence"
+        },
+        {
+          "id": "b",
+          "text": "Direct Preference Optimization"
+        },
+        {
+          "id": "c",
+          "text": "Gradient Ascent"
+        },
+        {
+          "id": "d",
+          "text": "Gradient Difference"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Evaluation of Unlearning and Graph Unlearning Part 1 [17:20-19:08] - Gradient Ascent: Mess up predictions on the forget set by increasing the usual training loss on the forget set."
+    },
+    {
+      "id": "week3-q7",
+      "type": "single",
+      "question": "According to the lecture, what is “Representation Engineering”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A bottom-up approach focusing on individual neurons."
+        },
+        {
+          "id": "b",
+          "text": "Modifying representation vectors to control model traits."
+        },
+        {
+          "id": "c",
+          "text": "A method for increasing the parameter count of a model."
+        },
+        {
+          "id": "d",
+          "text": "Re-labeling all data points in a dataset to fix biases."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Evaluation of Unlearning and Graph Unlearning Part 1 [30:35-33:10] - Modify the representation vectors to modify the model outputs."
+    },
+    {
+      "id": "week3-q8",
+      "type": "single",
+      "question": "In the context of the SISA framework, how does the system minimize the cost of retraining when a data point must be unlearned?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By using gradient ascent on only the affected data points."
+        },
+        {
+          "id": "b",
+          "text": "By applying a differential privacy constraint to the aggregation layer."
+        },
+        {
+          "id": "c",
+          "text": "By flipping the labels of the forget set and performing few-shot."
+        },
+        {
+          "id": "d",
+          "text": "By retraining only the constituent model whose shards contain the point to be unlearned."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Unlearning [25:00-29:43] - SISA training: data is divided in shards, which are themselves divided into slices. One constituent model is trained on each shard by presenting it with incrementally many slices and saving its parameters before the training set is augmented with a new slice. When data needs to be unlearned, only one of the constituent models whose shards contain the point to be unlearned needs to be retrained — retraining can start from the last parameter values saved before including the slice containing the data point to be unlearned."
+    },
+    {
+      "id": "week3-q9",
+      "type": "single",
+      "question": "According to the lecture, why is unlearning fundamental facts like “the sun rises every day” considered more difficult than unlearning infrequent textual occurrences, such as car accidents?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fundamental knowledge is deeply embedded in the model’s implicit knowledge graph."
+        },
+        {
+          "id": "b",
+          "text": "Fundamental facts are typically protected by guardrails."
+        },
+        {
+          "id": "c",
+          "text": "Models are primarily trained on Wikipedia, which contains these facts."
+        },
+        {
+          "id": "d",
+          "text": "Differential privacy guarantees fall off more quickly for fundamental facts."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Evaluation of Unlearning and Graph Unlearning Part 1 [25:25-27:16] - A piece of knowledge can be so embedded in the model’s implicit knowledge graph that it cannot be unlearned without introducing contradictions and harming the model’s utility."
+    },
+    {
+      "id": "week3-q10",
+      "type": "single",
+      "question": "Which unlearning evaluation metric focuses on whether the unlearning process negatively affects the model’s performance on the “retrain data” or unrelated tasks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Efficiency"
+        },
+        {
+          "id": "b",
+          "text": "Forgetting Quality"
+        },
+        {
+          "id": "c",
+          "text": "Model Utility"
+        },
+        {
+          "id": "d",
+          "text": "Membership Inference"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Approximate Unlearning [25:55-27:35] - Model utility: Do we harm performance on the retain data or orthogonal tasks?"
+    },
+    {
+      "id": "week3-q11",
+      "type": "multiple",
+      "question": "The WMDP benchmark measures hazardous knowledge in which specific areas? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Biosecurity/Bioweapons"
+        },
+        {
+          "id": "b",
+          "text": "Cybersecurity"
+        },
+        {
+          "id": "c",
+          "text": "Chemical security"
+        },
+        {
+          "id": "d",
+          "text": "Financial market manipulation"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Evaluation of Unlearning and Graph Unlearning Part 1 [19:45-21:40] - Unlearning dangerous knowledge, specifically on biosecurity, cybersecurity, and chemical security."
+    },
+    {
+      "id": "week3-q12",
+      "type": "multiple",
+      "question": "Which methods are used for Edge Unlearning? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "GraphEraser"
+        },
+        {
+          "id": "b",
+          "text": "GUIDE"
+        },
+        {
+          "id": "c",
+          "text": "Projector"
+        },
+        {
+          "id": "d",
+          "text": "GraphdEditor"
+        },
+        {
+          "id": "e",
+          "text": "GNNDelete"
+        },
+        {
+          "id": "f",
+          "text": "MEGU"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "d",
+        "e",
+        "f"
+      ],
+      "explanation": "Evaluation of Unlearning and Graph Unlearning Part 2 [13:14-16:53] - The chart has checkmarks showing the methods used for each type of unlearning."
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "week": 6,
+  "title": "Week 6",
+  "questions": [
+    {
+      "id": "week6-q1",
+      "type": "multiple",
+      "question": "According to the lecture, why would standard cryptographic solutions be unsuitable for AI model privacy? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is unclear whether all complex functions can be effectively evaluated from in the encryption space."
+        },
+        {
+          "id": "b",
+          "text": "Evaluation in encrypted space is computationally expensive."
+        },
+        {
+          "id": "c",
+          "text": "As the model scales, cryptographic keys become impossible to manage."
+        },
+        {
+          "id": "d",
+          "text": "Encryption models cannot be used for binary classification tasks."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b"
+      ],
+      "explanation": "Data Privacy [4:06-6:22] - There are two reasons why cryptographic solutions are not suitable. First, it is unclear whether you can do inference in an encrypted space. Second, encryption is an expensive solution."
+    },
+    {
+      "id": "week6-q2",
+      "type": "single",
+      "question": "In the context of healthcare data, why might a trained binary classification model still pose a privacy risk even if the raw data is not directly released?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The model weights occupy too much storage space."
+        },
+        {
+          "id": "b",
+          "text": "Binary classifiers are inherently less secure than multi-class ones."
+        },
+        {
+          "id": "c",
+          "text": "An adversary can reverse-engineer sensitive training data."
+        },
+        {
+          "id": "d",
+          "text": "The labels used for training are usually public knowledge."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Data Privacy [1:45-4:06] - An adversary can reverse-engineer sensitive personal information such as healthcare or financial data given a simple binary classification model."
+    },
+    {
+      "id": "week6-q3",
+      "type": "single",
+      "question": "How were users able to deanonymize the “anonymized” Netflix dataset?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By obtaining the meta-data of the dataset."
+        },
+        {
+          "id": "b",
+          "text": "By brute-forcing the sparse matrix to reveal the missing entries."
+        },
+        {
+          "id": "c",
+          "text": "By using cryptanalytic attacks to decode user information."
+        },
+        {
+          "id": "d",
+          "text": "By using an auxiliary public database, such as IMDb, to correlate ratings."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Data Privacy [8:55-12:46] - They were able to deanonymize the Netflix dataset by using an auxiliary database (IMDb) and correlating the two."
+    },
+    {
+      "id": "week6-q4",
+      "type": "single",
+      "question": "In the randomized response algorithm presented in the lecture, what is the minimum probability that the truthful answer is revealed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "10%"
+        },
+        {
+          "id": "b",
+          "text": "25%"
+        },
+        {
+          "id": "c",
+          "text": "50%"
+        },
+        {
+          "id": "d",
+          "text": "75%"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Data Privacy [21:25-24:12] - means that the truth will be revealed ε > 0 with a probability of . 𝑒 ε 1+ 𝑒 ε > 50%"
+    },
+    {
+      "id": "week6-q5",
+      "type": "single",
+      "question": "To maximize utility, how should the privacy parameter be adjusted? ε",
+      "options": [
+        {
+          "id": "a",
+          "text": "should be maximum for privacy, should be minimum for utility ε ε"
+        },
+        {
+          "id": "b",
+          "text": "should be minimum for privacy, should be minimum for utility ε ε"
+        },
+        {
+          "id": "c",
+          "text": "should be maximum for privacy, should be maximum for utility ε ε"
+        },
+        {
+          "id": "d",
+          "text": "should be minimum for privacy, should be maximum for utility ε ε"
+        },
+        {
+          "id": "e",
+          "text": "is unrelated ε"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Data Privacy [1:00:00 - 1:01:20] - If is large, and are easier to ε 𝑥𝑖 𝑧𝑖 distinguish, which increases utility, and vice versa. controls the privacy-utility tradeoff. ε"
+    },
+    {
+      "id": "week6-q6",
+      "type": "numeric",
+      "question": "An organization surveys 100 people and asks whether they voted for a certain party. To protect respondents' privacy, the organization uses the randomized response technique with . Out of 100 respondents, 60 reported “Yes” and 40 reported “No.” Estimate ε = 0. 5 the true number of people whose actual answer was “Yes”. Round to the nearest whole number.",
+      "options": [],
+      "correctAnswers": [],
+      "answer": "91",
+      "explanation": "Data Privacy"
+    },
+    {
+      "id": "week6-q7",
+      "type": "single",
+      "question": "Which trust scenario correctly describes the differential privacy model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trust the curator; Trust the world"
+        },
+        {
+          "id": "b",
+          "text": "Do not trust the curator; Trust the world"
+        },
+        {
+          "id": "c",
+          "text": "Trust the curator; Do not trust the world"
+        },
+        {
+          "id": "d",
+          "text": "Do not trust the curator; Do not trust the world"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Data Privacy [1:06:06-1:11:00] - In differential privacy, surveyors trust the curator to give their information to them but want their information to be privatized when the computed function is released to the world."
+    },
+    {
+      "id": "week6-q8",
+      "type": "single",
+      "question": "In the Laplace Mechanism, how is the sensitivity defined for a function ? (∆) 𝑓",
+      "options": [
+        {
+          "id": "a",
+          "text": "The average difference between and for all neighbouring and . 𝑓(𝑋) 𝑓(𝑋') 𝑋 𝑋'"
+        },
+        {
+          "id": "b",
+          "text": "The maximum absolute difference between and for any two 𝑓(𝑋) 𝑓(𝑋') neighboring and . 𝑋 𝑋'"
+        },
+        {
+          "id": "c",
+          "text": "The standard deviation of the function . 𝑓"
+        },
+        {
+          "id": "d",
+          "text": "The minimum difference between and for any two neighboring and 𝑓(𝑋) 𝑓(𝑋') 𝑋 . 𝑋'"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Differential Privacy [21:30-22:34] - Sensitivity in the Laplace (∆) mechanism measures how sensitive a function is to a single input change. It is the 𝑓 maximum absolute difference over all neighboring datasets and that |𝑓(𝑋) − 𝑓(𝑋')| 𝑋 𝑋' differ by one element."
+    },
+    {
+      "id": "week6-q9",
+      "type": "single",
+      "question": "According to Cynthia Dwork's definition of -differential privacy, for all neighbouring ε datasets and , the probability that a mechanism on generates an output in 𝑋 𝑋' 𝑀 𝑋 subset divided by the probability that a mechanism on generates an output in 𝑆 𝑀 𝑋' subset is at most: 𝑆",
+      "options": [
+        {
+          "id": "a",
+          "text": "𝑒 ε"
+        },
+        {
+          "id": "b",
+          "text": "ε"
+        },
+        {
+          "id": "c",
+          "text": "1/ε"
+        },
+        {
+          "id": "d",
+          "text": "ε 𝑒"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Differential Privacy [9:57-15:02] - A mechanism is said to be 𝑀 ε -differential private if 𝑃𝑟(𝑀(𝑋) ϵ 𝑆) 𝑃𝑟(𝑀(𝑋') ϵ 𝑆) ≤𝑒 ε."
+    },
+    {
+      "id": "week6-q10",
+      "type": "single",
+      "question": "What property of neighboring data sets and is used to prove the privacy guarantee 𝑋 𝑋' of Randomized Response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They have zero correlation."
+        },
+        {
+          "id": "b",
+          "text": "They differ by 99% of the elements in the set."
+        },
+        {
+          "id": "c",
+          "text": "They are disjoint sets."
+        },
+        {
+          "id": "d",
+          "text": "They differ by only one element."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Data Privacy [24:29-25:58] - and are two datasets where 𝑋 𝑋' , meaning they differ by only one element of index . 𝑋= 𝑋' ∀ 𝑖 ϵ {1 ... ( 𝑛−1)} 𝑖 = 𝑛"
+    },
+    {
+      "id": "week6-q11",
+      "type": "single",
+      "question": "For a fixed , if a function being computed is highly sensitive (large ), how does it affect ε ∆ the noise added to the Laplace mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Less noise is added."
+        },
+        {
+          "id": "b",
+          "text": "More noise is added."
+        },
+        {
+          "id": "c",
+          "text": "The noise remains unchanged."
+        },
+        {
+          "id": "d",
+          "text": "Noise is irrelevant."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Differential Privacy [27:14-31:00] - The more sensitive the function, the more noise should be added."
+    },
+    {
+      "id": "week6-q12",
+      "type": "single",
+      "question": "Comparing the Laplace mechanism and randomized response, how does the required number of respondents differ to achieve the same privacy–utility trade-off? 𝑛",
+      "options": [
+        {
+          "id": "a",
+          "text": "The Laplace mechanism requires quadratically more people."
+        },
+        {
+          "id": "b",
+          "text": "The Laplace mechanism requires quadratically fewer people."
+        },
+        {
+          "id": "c",
+          "text": "Both require the same number of people."
+        },
+        {
+          "id": "d",
+          "text": "The number of people to survey does not matter."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Differential Privacy [50:18-53:02] - If you trust the curator, then you would have to survey a quadratically lesser number of people to achieve the same privacy-utility tradeoff using the Laplace mechanism than not trusting the curator."
+    }
+  ]
+}

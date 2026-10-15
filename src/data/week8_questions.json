@@ -1,0 +1,333 @@
+{
+  "week": 8,
+  "title": "Week 8",
+  "questions": [
+    {
+      "id": "week8-q1",
+      "type": "single",
+      "question": "Which of the following best describes Pixel Attribution Methods?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They compress neural network layers to reduce model size."
+        },
+        {
+          "id": "b",
+          "text": "They automatically remove backdoor triggers from poisoned datasets."
+        },
+        {
+          "id": "c",
+          "text": "They convert text datasets directly into image representations."
+        },
+        {
+          "id": "d",
+          "text": "They highlight pixels that were relevant for a certain image classification."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Interpretability - I [3:40-4:55] - Pixel Attribution Methods highlight the pixels that were relevant for a certain image classification by a neural network"
+    },
+    {
+      "id": "week8-q2",
+      "type": "single",
+      "question": "Which of the following pixel attribution methods involve manipulating parts of an image to generate explanations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gradient-based methods"
+        },
+        {
+          "id": "b",
+          "text": "Occlusion-based methods"
+        },
+        {
+          "id": "c",
+          "text": "Mechanical methods"
+        },
+        {
+          "id": "d",
+          "text": "Top-down methods"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Interpretability - I [6:33-7:25] - Occlusion- or perturbation-based: Methods like SHAP and LIME manipulate parts of the image to generate explanations (model-agnostic)."
+    },
+    {
+      "id": "week8-q3",
+      "type": "single",
+      "question": "What should happen to a saliency map if a model that genuinely captures higher-level class concepts has its layers randomized?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The map should invert its colors."
+        },
+        {
+          "id": "b",
+          "text": "The map should remain identical."
+        },
+        {
+          "id": "c",
+          "text": "The map should change significantly."
+        },
+        {
+          "id": "d",
+          "text": "The map should become a blank image."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Interpretability - I [20:11-22:28] - If a model captures higher-level class concepts, then saliency maps should change as the model is being randomized."
+    },
+    {
+      "id": "week8-q4",
+      "type": "multiple",
+      "question": "How can we validate the explanations given by LIME? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "By using prior knowledge."
+        },
+        {
+          "id": "b",
+          "text": "By randomizing the model’s layers."
+        },
+        {
+          "id": "c",
+          "text": "By using human annotators."
+        },
+        {
+          "id": "d",
+          "text": "By applying adversarial perturbations."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "c"
+      ],
+      "explanation": "Interpretability - I [25:10-27:03] - Using prior knowledge, we can validate the explanations. Human annotation can be used to decide whether the model's explanations are correct."
+    },
+    {
+      "id": "week8-q5",
+      "type": "single",
+      "question": "Which of the following interpretability approaches involves locating information in a model without fully understanding how it is processed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mechanistic interpretability"
+        },
+        {
+          "id": "b",
+          "text": "Top-down interpretability"
+        },
+        {
+          "id": "c",
+          "text": "Feature-based visualization"
+        },
+        {
+          "id": "d",
+          "text": "Game-theoretic approach"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Interpretability - II [9:57-11:58] - Top-down locates information in a model without full understanding of how it is processed"
+    },
+    {
+      "id": "week8-q6",
+      "type": "single",
+      "question": "What is the primary function of probing in interpretability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To inject hidden trojans into public datasets during training."
+        },
+        {
+          "id": "b",
+          "text": "To check whether representations encode information reliably"
+        },
+        {
+          "id": "c",
+          "text": "To optimize latent space interpolation for image generation"
+        },
+        {
+          "id": "d",
+          "text": "To completely reverse-engineer all node-to-node algorithmic connections in large language models."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Interpretability - II [13:57-16:33] - Probing loosely refers to a class of methodologies in interpretability to check whether representations encode information reliably for some specific task."
+    },
+    {
+      "id": "week8-q7",
+      "type": "multiple",
+      "question": "According to the lecture, which of the following are Attack Vectors? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "API keys"
+        },
+        {
+          "id": "b",
+          "text": "Public Datasets"
+        },
+        {
+          "id": "c",
+          "text": "HuggingFace models"
+        },
+        {
+          "id": "d",
+          "text": "A downloadable execution file"
+        }
+      ],
+      "correctAnswers": [
+        "b",
+        "c"
+      ],
+      "explanation": "Interpretability - II [20:32-21:23] - Public datasets and model sharing libraries are some examples of attack vectors."
+    },
+    {
+      "id": "week8-q8",
+      "type": "single",
+      "question": "Consider the following equation for LIME: What do the components and represent? 𝐿 Ω(𝑔)",
+      "options": [
+        {
+          "id": "a",
+          "text": "measures how unfaithful the explanation model is in approximating locally 𝐿 𝑔 𝑓 (weighted by , while measures the complexity/interpretability penalty of π𝑥 Ω(𝑔) the explanation model."
+        },
+        {
+          "id": "b",
+          "text": "represents the global accuracy of the black-box model , and represents 𝐿 𝑓 Ω(𝑔) the total number of convolutional layers."
+        },
+        {
+          "id": "c",
+          "text": "is the adversarial perturbation budget, and is the learning rate of the 𝐿 Ω(𝑔) surrogate model."
+        },
+        {
+          "id": "d",
+          "text": "calculates the exact Shapley values, and computes the gradient with 𝐿 Ω(𝑔) respect to input pixels."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Interpretability - I [32:03-34:57] - In LIME's objective function, quantifies 𝐿 how poorly the simple explanation model approximates the complex black-box model 𝑔 within the local neighborhood defined by , while penalizes model complexity to 𝑓 π𝑥 Ω(𝑔) ensure the resulting explanation remains simple and interpretable for humans."
+    },
+    {
+      "id": "week8-q9",
+      "type": "single",
+      "question": "What is the primary goal of Neural Cleanse when detecting Trojans in neural networks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To fine-tune the model using a 0.05% poisoned dataset"
+        },
+        {
+          "id": "b",
+          "text": "To reverse-engineer potential triggers"
+        },
+        {
+          "id": "c",
+          "text": "To prune the entire first-layer weights of a classifier"
+        },
+        {
+          "id": "d",
+          "text": "To train a neural network using high-dimensional pooling layers"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Interpretability - II [26:57-31:36] - If we know the general form of the attack, we can reverse-engineer the Trojan by searching for a trigger and target label."
+    },
+    {
+      "id": "week8-q10",
+      "type": "single",
+      "question": "How does top-down interpretability differ from mechanistic interpretability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-down focuses on algorithmic node-to-node connections, whereas mechanistic looks at global activity of populations of neurons."
+        },
+        {
+          "id": "b",
+          "text": "Top-down localizes information in a model and looks at representational spaces, while mechanistic attempts to reverse-engineer neural networks at the neuron level."
+        },
+        {
+          "id": "c",
+          "text": "Top-down requires full mathematical proof of model weights, whereas mechanistic is entirely model-agnostic."
+        },
+        {
+          "id": "d",
+          "text": "Top-down can only be applied to text-based saliency maps, whereas mechanistic only applies to GANs."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Interpretability - II [6:27-11:58] - Mechanistic: Reverse-engineer neural Networks; Top-Down: Locate information in a model without full understanding of how it is processed."
+    },
+    {
+      "id": "week8-q11",
+      "type": "single",
+      "question": "What game-theoretic concept does SHAP (Shapley Additive exPlanations) explain about the output of any machine learning model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nash Equilibrium"
+        },
+        {
+          "id": "b",
+          "text": "Pareto Optimality"
+        },
+        {
+          "id": "c",
+          "text": "Shapley Values"
+        },
+        {
+          "id": "d",
+          "text": "Minimax Theorem"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Interpretability - I [35:20-39:39] - Connects optimal credit allocation with local explanations using the classic Shapley values from game theory and their related extensions."
+    },
+    {
+      "id": "week8-q12",
+      "type": "multiple",
+      "question": "Regarding LIME and SHAP, which of the following statements are true? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "They generate global explanations that apply uniformly across the entire dataset."
+        },
+        {
+          "id": "b",
+          "text": "They are model-agnostic methods that can work on any black-box model."
+        },
+        {
+          "id": "c",
+          "text": "They are restricted solely to image datasets and cannot handle natural language data."
+        },
+        {
+          "id": "d",
+          "text": "They can be computationally expensive to compute compared to direct gradient-based visualizations."
+        }
+      ],
+      "correctAnswers": [
+        "b",
+        "d"
+      ],
+      "explanation": "Interpretability - I [25:09-39:39] - Works on any black-box model with many data types."
+    }
+  ]
+}

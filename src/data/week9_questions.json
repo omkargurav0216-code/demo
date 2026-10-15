@@ -1,0 +1,342 @@
+{
+  "week": 9,
+  "title": "Week 9",
+  "questions": [
+    {
+      "id": "week9-q1",
+      "type": "single",
+      "question": "What is the difference between \"vertical\" and \"horizontal\" AI regulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vertical regulates the hardware, while horizontal regulates the software."
+        },
+        {
+          "id": "b",
+          "text": "Vertical regulation is completely market-based, while horizontal is purely state-controlled."
+        },
+        {
+          "id": "c",
+          "text": "Vertical regulation applies existing sector-specific laws to AI, while horizontal regulation creates broad, new risk-based laws across all sectors."
+        },
+        {
+          "id": "d",
+          "text": "Vertical regulation only applies to the industry, while horizontal applies to the industry and its customers."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 1 [40:25-43:12] - Vertical regulation tweaks existing laws for specific industries, whereas horizontal regulation attempts to classify and govern the technology itself across all sectors."
+    },
+    {
+      "id": "week9-q2",
+      "type": "single",
+      "question": "Why is data privacy considered a relatively better-understood guardrail compared to model explainability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Explainability has exact mathematical bounds, whereas privacy cannot be measured mathematically."
+        },
+        {
+          "id": "b",
+          "text": "Privacy can be controlled by improving the model’s accuracy, while explainability depends mainly on the size of the training dataset."
+        },
+        {
+          "id": "c",
+          "text": "Privacy can be formally bounded and guaranteed with mathematical frameworks."
+        },
+        {
+          "id": "d",
+          "text": "There are far less constraints in ensuring data privacy than explainability."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 2 [14:20-14:50] - Mathematical frameworks like differential privacy or cryptography provide proven security guarantees, explainability is black-box and remains harder to formally bound."
+    },
+    {
+      "id": "week9-q3",
+      "type": "single",
+      "question": "According to the lecture, as AI systems become autonomous agents capable of performing complex tasks independently, what is the main trade-off that occurs regarding human decision-making.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Individual human agency decreases as decision-making is delegated to autonomous AI systems."
+        },
+        {
+          "id": "b",
+          "text": "Human decision-making increases because autonomous AI agents provide more information and recommendations to users."
+        },
+        {
+          "id": "c",
+          "text": "Human agency remains unchanged because autonomous AI systems only perform tasks without affecting human decisions."
+        },
+        {
+          "id": "d",
+          "text": "Human decision-making becomes more reliable because AI agents completely eliminate uncertainty and errors from the decision-making process."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 2 [33:10-34:00] - Delegating tasks to autonomous agents reduces individual agency over automated decisions."
+    },
+    {
+      "id": "week9-q4",
+      "type": "multiple",
+      "question": "Which of the following are privacy-preserving training techniques? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model Quantization"
+        },
+        {
+          "id": "b",
+          "text": "Differential Privacy"
+        },
+        {
+          "id": "c",
+          "text": "Federated Learning"
+        },
+        {
+          "id": "d",
+          "text": "Data Augmentation"
+        }
+      ],
+      "correctAnswers": [
+        "b",
+        "c"
+      ],
+      "explanation": "Differential Privacy protects individual data by adding carefully calibrated noise during training while maintaining useful model performance. Federated Learning trains models across decentralized devices without requiring the personal data to be centrally collected."
+    },
+    {
+      "id": "week9-q5",
+      "type": "single",
+      "question": "In structured AI governance, what is defines a “co-regulation” model from from strict-regulation or self-regulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Companies operate without zero external guidelines or government interaction."
+        },
+        {
+          "id": "b",
+          "text": "The government directly dictates every policy of code without interference from the industry."
+        },
+        {
+          "id": "c",
+          "text": "The government ensures that consumers have as much responsiblities as companies to follow policy."
+        },
+        {
+          "id": "d",
+          "text": "Industries establish policies which are formally recognized and enforced by the government."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 2 [49:10-51:06] - Co-regulation combines industry expertise in defining baseline standards with government authorization to enforce them across the industry."
+    },
+    {
+      "id": "week9-q6",
+      "type": "single",
+      "question": "According to the lecture, if copyrighted data is found inside a large AI model and must be removed, what is a major technical challenge?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Removing the data may significantly reduce the model’s ability to generalize to unrelated tasks."
+        },
+        {
+          "id": "b",
+          "text": "The model may need to be retrained or use specialized unlearning techniques to remove the data’s influence."
+        },
+        {
+          "id": "c",
+          "text": "The model may become unstable because removing one data point automatically changes its entire architecture."
+        },
+        {
+          "id": "d",
+          "text": "The model may require additional training on the copyrighted data before its influence can be safely removed."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 2 [45:45-47:05] - Purging individual data points from large AI models is complex and often requires costly model retraining or complex unlearning algorithms."
+    },
+    {
+      "id": "week9-q7",
+      "type": "single",
+      "question": "According to the discussed AI safety and governance proposals, about how much of an AI model’s development budget should be spent on safety and responsible AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "50% on legal costs"
+        },
+        {
+          "id": "b",
+          "text": "100% on testing the model after it is released"
+        },
+        {
+          "id": "c",
+          "text": "10% on AI safety and responsible AI research"
+        },
+        {
+          "id": "d",
+          "text": "All profits on building newer hardware"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 3 [5:35-6:11] - Tristan Harris proposed allocating 10% of model development budgets to safe and responsible AI practices."
+    },
+    {
+      "id": "week9-q8",
+      "type": "single",
+      "question": "According to the lecture, which technical strategy help reduce the energy consumption and environmental footprint of LLM deployment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing every simple text query to ultra-large GPU clusters in real time."
+        },
+        {
+          "id": "b",
+          "text": "Increasing parameter counts by 10x for routine classification tasks."
+        },
+        {
+          "id": "c",
+          "text": "Running duplicate backup models continuously on solar-powered data centers."
+        },
+        {
+          "id": "d",
+          "text": "Moving model inference to run on CPUs/Edge devices instead of GPUs."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 3 [18:40-20:26] - Running models on CPU/Edge devices makes infrastructure cheaper and environmentally friendly as they require less energy."
+    },
+    {
+      "id": "week9-q9",
+      "type": "single",
+      "question": "How does Back Translation Defense mitigate jailbreak attacks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It takes an unmoderated model output, reverse-infers the prompt that generated it, and runs it through safety filters."
+        },
+        {
+          "id": "b",
+          "text": "It translates outputs into multiple foreign languages until a syntax error occurs."
+        },
+        {
+          "id": "c",
+          "text": "It automatically rejects any prompt containing more words than the model’s maximum context window."
+        },
+        {
+          "id": "d",
+          "text": "It re-encrypts the LLM’s weights after every user interaction."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Policies, Regulations, AGI - Part 3 [23:22-25:02] - Back-translation reconstructs the user prompt from the generated output so moderation filters can catch hidden jailbreak attempts."
+    },
+    {
+      "id": "week9-q10",
+      "type": "multiple",
+      "question": "Which of the following are principles of Responsible AI (RAI)? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fairness"
+        },
+        {
+          "id": "b",
+          "text": "Explainability"
+        },
+        {
+          "id": "c",
+          "text": "AI Autonomy"
+        },
+        {
+          "id": "d",
+          "text": "Accountability"
+        },
+        {
+          "id": "e",
+          "text": "Fast Deployment"
+        },
+        {
+          "id": "f",
+          "text": "Privacy"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "d",
+        "f"
+      ],
+      "explanation": "Week 9 Lec 45 Lecture Notes [Slide 5] - Fairness, Explainability, Accountability and Privacy are RAI Principles."
+    },
+    {
+      "id": "week9-q11",
+      "type": "single",
+      "question": "According to the Fairness Tree Framework, which fairness metric is recommended when interventions are punitive and you are most concerned with ensuring predictive equity among people for whom intervention is taken?",
+      "options": [
+        {
+          "id": "a",
+          "text": "FN/GS Parity"
+        },
+        {
+          "id": "b",
+          "text": "FP/GS Pairty"
+        },
+        {
+          "id": "c",
+          "text": "FDR Parity"
+        },
+        {
+          "id": "d",
+          "text": "FPR Parity"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Week 9 Lec 45 Lecture Notes [Slide 20] - FDR Parity is used when intervention is punitive (could hurt individuals) and you are most concerned with ensuring predictive equity among people for whom intervention is taken?"
+    },
+    {
+      "id": "week9-q12",
+      "type": "single",
+      "question": "According to the systems approach framework for AI design and development, what action immediately follows the step of analyzing the root causes of bias?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Measure and detect the bias"
+        },
+        {
+          "id": "b",
+          "text": "Mitigate the impact through adjusting interventions"
+        },
+        {
+          "id": "c",
+          "text": "Monitor & Evaluate"
+        },
+        {
+          "id": "d",
+          "text": "Improve fairness of AI systems"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Week 9 Lec 45 Lecture Notes [Slide 16] - Analyzing the root causes occurs in the Understand step, and the next is the Improve step."
+    }
+  ]
+}

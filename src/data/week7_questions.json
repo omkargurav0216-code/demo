@@ -1,0 +1,315 @@
+{
+  "week": 7,
+  "title": "Week 7",
+  "questions": [
+    {
+      "id": "week7-q1",
+      "type": "single",
+      "question": "In Approximate Differential Privacy, what does represent? δ",
+      "options": [
+        {
+          "id": "a",
+          "text": "The strict upper bound of the probability of the mechanism . 𝑀"
+        },
+        {
+          "id": "b",
+          "text": "The estimated noise added to the Laplace Mechanism."
+        },
+        {
+          "id": "c",
+          "text": "The average difference between all the data points in the datasets and . 𝑋 𝑋'"
+        },
+        {
+          "id": "d",
+          "text": "A leeway for small-probability events where -differential privacy may fail. ε"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Approximate Differential Privacy [6:50-9:26] - is a small leeway for low δ probability events where -differential privacy property may not hold true. ε"
+    },
+    {
+      "id": "week7-q2",
+      "type": "single",
+      "question": "Compared to the Laplacian mechanism, how does the Gaussian mechanism scale the amount of noise added when releasing D different outputs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It adds noise linearly proportional to D."
+        },
+        {
+          "id": "b",
+          "text": "It adds noise proportional to the square root of D."
+        },
+        {
+          "id": "c",
+          "text": "It adds noise exponentially proportional to D."
+        },
+        {
+          "id": "d",
+          "text": "It adds the same amount of noise."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Approximate Differential Privacy [18:00-20:58] - The Guassian Mechanism requires quadratically less amount of noise to become in terms of number of output that you're releasing."
+    },
+    {
+      "id": "week7-q3",
+      "type": "multiple",
+      "question": "Which of the following are properties of Approximate Differential Privacy? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "It satisfies the property of post-processing, meaning any data-independent computation applied to the output will not make it less -differentially private. (ε, δ)"
+        },
+        {
+          "id": "b",
+          "text": "It guarantees privacy even when is significantly larger than (where is the δ 1/𝑛 𝑛 number of individuals in a dataset)."
+        },
+        {
+          "id": "c",
+          "text": "It satisfies composition, meaning if you have mechanisms that are all 𝑘 (ε, δ) -differentially private, then the combined mechanism is -differentially (𝑘ε, 𝑘δ) private."
+        },
+        {
+          "id": "d",
+          "text": "It guarantees that the output distributions of the algorithm are completely identical for any two neighboring datasets."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "c"
+      ],
+      "explanation": "Approximate Differential Privacy [23:40-34:53] - Approximate differential privacy has two properties: post-processing and composition."
+    },
+    {
+      "id": "week7-q4",
+      "type": "single",
+      "question": "According to the lecture, what is the primary advantage of using the Gaussian Mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zero chance of privacy leakage."
+        },
+        {
+          "id": "b",
+          "text": "Faster computational time for calculating probabilities."
+        },
+        {
+          "id": "c",
+          "text": "Better utility due to adding quadratically less noise."
+        },
+        {
+          "id": "d",
+          "text": "Eliminates the need for a trusted curator."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Approximate Differential Privacy [14:45-22:55] - Gaussian mechanism gains better utility with quadratically less amount of noise."
+    },
+    {
+      "id": "week7-q5",
+      "type": "numeric",
+      "question": "There are three buyers whose valuations are 15, 20, and 135, respectively. What is the absolute difference in revenue when the price of a digital good changes from 14 to 18? (Round your answer to the nearest whole number.)",
+      "options": [],
+      "correctAnswers": [],
+      "answer": "6",
+      "explanation": "Exponential Mechanism"
+    },
+    {
+      "id": "week7-q6",
+      "type": "single",
+      "question": "How does the Exponential Mechanism select a price ? ℎ ϵ 𝐻",
+      "options": [
+        {
+          "id": "a",
+          "text": "With probability proportional to the inverse of the price."
+        },
+        {
+          "id": "b",
+          "text": "With probability proportional to . 𝑒 ε 2δ 𝑆(𝑥, ℎ)"
+        },
+        {
+          "id": "c",
+          "text": "With probability proportional to . 𝑒 δ 2ε 𝑆(𝑥, ℎ)"
+        },
+        {
+          "id": "d",
+          "text": "Uniformly at random from all prices below the maximum valuation."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Exponential Mechanism [14:11-15:00] - Select with probability ℎ ϵ 𝐻 proportional to . 𝑒 ε 2δ 𝑆(𝑥, ℎ)"
+    },
+    {
+      "id": "week7-q7",
+      "type": "single",
+      "question": "What privacy guarantee does the Exponential Mechanism provide for buyers' valuations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "-Differential Privacy (ε, δ)"
+        },
+        {
+          "id": "b",
+          "text": "-Differential Privacy ε"
+        },
+        {
+          "id": "c",
+          "text": "K-Anonymity"
+        },
+        {
+          "id": "d",
+          "text": "Concentrated Differential Privacy"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Exponential Mechanism [15:53-18:15] - Exponential mechanism is Epsilon differentially private for the given valuations."
+    },
+    {
+      "id": "week7-q8",
+      "type": "single",
+      "question": "What is the utility guarantee provided by the Exponential Mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It guarantees the absolute highest possible revenue every time."
+        },
+        {
+          "id": "b",
+          "text": "It does not guarantee positive revenue every time."
+        },
+        {
+          "id": "c",
+          "text": "It guarantees that the revenue will not be significantly lower than the optimal revenue."
+        },
+        {
+          "id": "d",
+          "text": "The guarantee will exactly match the median valuation."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Exponential Mechanism [18:15-22:35] - It guarantees that the revenue will not be significantly lower than the optimal revenue."
+    },
+    {
+      "id": "week7-q9",
+      "type": "single",
+      "question": "In Statistical Parity, for a protected group and a classifier , what is the parity value for 𝐶 𝑀 an ideal classifier?",
+      "options": [
+        {
+          "id": "a",
+          "text": "-1"
+        },
+        {
+          "id": "b",
+          "text": "0"
+        },
+        {
+          "id": "c",
+          "text": "0.5"
+        },
+        {
+          "id": "d",
+          "text": "1"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Fairness in Machine Learning [47:03-50:41] - An ideal classifier has a parity equal to 0."
+    },
+    {
+      "id": "week7-q10",
+      "type": "multiple",
+      "question": "According to the data comparing White and African American defendants in risk assessments, which of the following statements are true? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "White defendants were labeled lower risk yet did re-offend at a higher rate than African American defendants."
+        },
+        {
+          "id": "b",
+          "text": "African American defendants were labeled higher risk but didn't re-offend at a higher rate than White defendants."
+        },
+        {
+          "id": "c",
+          "text": "White defendants had a higher rate of being labeled higher risk without re-offending than African American defendants."
+        },
+        {
+          "id": "d",
+          "text": "African American defendants had a lower rate of being labeled lower risk yet re-offending compared to White defendants."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Fairness in Machine Learning [19:42-21:38] - According to the table: ● A higher percentage of African Americans were labelled as higher risk but didn’t re-offend ● A higher percentage of White people were labelled as low risk but did re-offend. ● A lower percentage of African Americans were labelled as lower risk yet re-offended compared to White people."
+    },
+    {
+      "id": "week7-q11",
+      "type": "single",
+      "question": "Based on the analysis of biases in word embeddings from Wikipedia and Social Media, which of the following professions was associated with sexist prejudice towards men?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nurse"
+        },
+        {
+          "id": "b",
+          "text": "Teacher"
+        },
+        {
+          "id": "c",
+          "text": "Pharmacist"
+        },
+        {
+          "id": "d",
+          "text": "Cameraman"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Fairness in Machine Learning [24:44-28:10] - According to the lecture, “Cameraman” is a profession that is associated with sexist prejudice towards men."
+    },
+    {
+      "id": "week7-q12",
+      "type": "single",
+      "question": "The goal of Fair PCA is to find a PCA solution such that the reconstruction 𝑈= [𝑈𝐴, 𝑈𝐵] losses of groups A and B (where A is the protected group) are:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Equal"
+        },
+        {
+          "id": "b",
+          "text": "Unequal"
+        },
+        {
+          "id": "c",
+          "text": "The protected group has a lower reconstruction loss"
+        },
+        {
+          "id": "d",
+          "text": "The protected group has a higher reconstruction loss"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Fairness in Machine Learning [40:05-44:56] - At optimality, Fair PCA minimizes the maximum loss between the groups, which mathematically forces their average reconstruction errors to be equal."
+    }
+  ]
+}

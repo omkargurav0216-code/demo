@@ -1,0 +1,289 @@
+{
+  "week": 12,
+  "title": "Week 12 Quiz",
+  "source": "User-provided screenshots of quiz questions and accepted answers",
+  "questions": [
+    {
+      "id": "week12-q1",
+      "type": "single",
+      "question": "What does a ‘guarded’ attribute mean in a language model’s representation space?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The attribute can only be classified by specific linear probes."
+        },
+        {
+          "id": "b",
+          "text": "The attribute requires non-linear transformations to be classified."
+        },
+        {
+          "id": "c",
+          "text": "The attribute is heavily emphasized during the initial pre-training process."
+        },
+        {
+          "id": "d",
+          "text": "The attribute is entirely impossible to classify based on the representation."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q2",
+      "type": "single",
+      "question": "What is the primary objective of modifying vectors from one distribution (e.g., toxic to non-toxic) to look like another?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To increase the computational cost of generating toxic content."
+        },
+        {
+          "id": "b",
+          "text": "To guard an attribute with the smallest possible change to unrelated semantics."
+        },
+        {
+          "id": "c",
+          "text": "To fundamentally alter the underlying vocabulary of the model."
+        },
+        {
+          "id": "d",
+          "text": "To completely randomize the vector outputs of specific trigger tokens."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q3",
+      "type": "single",
+      "question": "According to the lecture, what is the implication behind using Affine Steering?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is a no-gradient and cheap way to control model generation."
+        },
+        {
+          "id": "b",
+          "text": "It fine-tunes the model to effectively remove bias using minimal training data."
+        },
+        {
+          "id": "c",
+          "text": "It is a highly interpretable, gradient-based optimization method."
+        },
+        {
+          "id": "d",
+          "text": "It depends heavily on reinforcement learning and human feedback."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q4",
+      "type": "single",
+      "question": "How does the size of a conventional cell complex scale as the size of the graph increases?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It scales inversely with respect to graph size."
+        },
+        {
+          "id": "b",
+          "text": "It scales quadratically with respect to graph size."
+        },
+        {
+          "id": "c",
+          "text": "It scales logarithmically with respect to graph size."
+        },
+        {
+          "id": "d",
+          "text": "It scales linearly with respect to graph size."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q5",
+      "type": "single",
+      "question": "In the molecule toxicity detection task, why might a standard Graph Neural Network Explainer fail to identify the correct explanation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It removes all nodes that have a high edge degree."
+        },
+        {
+          "id": "b",
+          "text": "It processes node features too slowly for a chemical dataset."
+        },
+        {
+          "id": "c",
+          "text": "It cannot capture specific multi-node groupwise interactions."
+        },
+        {
+          "id": "d",
+          "text": "It assigns zero weight to all the chemical bonds by default."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q6",
+      "type": "single",
+      "question": "How does FORGE reduce the computational complexity of the cell complex to a linear scale?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By randomly sampling only 10% of the original graph edges."
+        },
+        {
+          "id": "b",
+          "text": "By strategically removing specific types of boundary relations."
+        },
+        {
+          "id": "c",
+          "text": "By completely deleting all nodes with a degree higher than a threshold degree."
+        },
+        {
+          "id": "d",
+          "text": "By executing the explainer algorithm on highly compressed latent space."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q7",
+      "type": "single",
+      "question": "How are cycles structurally represented in the cell complex?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are represented as 0-cells."
+        },
+        {
+          "id": "b",
+          "text": "They are represented as 1-cells."
+        },
+        {
+          "id": "c",
+          "text": "They are represented as 2-cells."
+        },
+        {
+          "id": "d",
+          "text": "They are represented as 3-cells."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q8",
+      "type": "multiple",
+      "question": "Which of the following are examples of graph explainers? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Predicting the next token in a language model"
+        },
+        {
+          "id": "b",
+          "text": "Toxicity detection of molecules"
+        },
+        {
+          "id": "c",
+          "text": "Affine concept erasure"
+        },
+        {
+          "id": "d",
+          "text": "Drug prediction"
+        },
+        {
+          "id": "e",
+          "text": "Fraud detection"
+        }
+      ],
+      "correctAnswers": [
+        "b",
+        "d",
+        "e"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q9",
+      "type": "single",
+      "question": "Which of the following methods benefits the most from the FORGE framework?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attention-based methods"
+        },
+        {
+          "id": "b",
+          "text": "Surrogate-based methods"
+        },
+        {
+          "id": "c",
+          "text": "Gradient-based methods"
+        },
+        {
+          "id": "d",
+          "text": "Perturbation-based methods"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "week12-q10",
+      "type": "multiple",
+      "question": "Based on the mathematical definitions of cell complexes presented in the FORGE slides, which of the following statements are correct? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "A 0-cell corresponds to a vertex, while a 1-cell corresponds to an edge in traditional graphs."
+        },
+        {
+          "id": "b",
+          "text": "The 1-skeleton X^(1) of a cell complex consists exclusively of 1-dimensional cells."
+        },
+        {
+          "id": "c",
+          "text": "Vertical boundary relations connect two cells of the same dimension that share a common boundary."
+        },
+        {
+          "id": "d",
+          "text": "Boundary relations in the framework are restricted to be undirected, meaning σ(c₁,c₂) = σ(c₂,c₁)."
+        },
+        {
+          "id": "e",
+          "text": "A p-cell c^(p) is considered a face or boundary of a (p+1)-cell c^(p+1) if the set of points composing c^(p) is a subset of those composing c^(p+1)."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "d",
+        "e"
+      ],
+      "explanation": ""
+    }
+  ]
+}
