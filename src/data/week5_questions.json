@@ -1,0 +1,319 @@
+{
+  "week": 5,
+  "title": "Week 5",
+  "questions": [
+    {
+      "id": "week5-q1",
+      "type": "single",
+      "question": "What should be the language modelling (lms) for an ideal model in the StereoSet benchmark?",
+      "options": [
+        {
+          "id": "a",
+          "text": "25"
+        },
+        {
+          "id": "b",
+          "text": "50"
+        },
+        {
+          "id": "c",
+          "text": "75"
+        },
+        {
+          "id": "d",
+          "text": "100"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Bias - III [7:24-11:17] - The lms of an ideal language model will be 100."
+    },
+    {
+      "id": "week5-q2",
+      "type": "single",
+      "question": "In the CrowS-Pairs benchmark, what does a score of 100% indicate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The model has no social bias."
+        },
+        {
+          "id": "b",
+          "text": "The model always prefers anti-stereotypical sentences."
+        },
+        {
+          "id": "c",
+          "text": "The model always prefers stereotypical sentences."
+        },
+        {
+          "id": "d",
+          "text": "The model is an ideal language model."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Bias - III [7:24-11:17] - Stereotype score (ss) is the percentage of examples where the model prefers stereotypical associations over anti-stereotypical ones."
+    },
+    {
+      "id": "week5-q3",
+      "type": "single",
+      "question": "What phenomenon occurs when fine-tuning all parameters of a large language model (LLM) to remove bias, leading to a drop in general performance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model Drifting"
+        },
+        {
+          "id": "b",
+          "text": "Catastrophic Forgetting"
+        },
+        {
+          "id": "c",
+          "text": "Overfitting"
+        },
+        {
+          "id": "d",
+          "text": "Gradient Explosion"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Catastrophic forgetting occurs when fine-tuning an LLM on a specific task, such as bias removal, causes it to lose previously learned knowledge and general capabilities."
+    },
+    {
+      "id": "week5-q4",
+      "type": "single",
+      "question": "What is Counterfactual Data Augmentation (CDA)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Re-balancing a corpus by swapping bias attribute words in a dataset."
+        },
+        {
+          "id": "b",
+          "text": "Adding more stereotypical sentences to a dataset to make it more biased."
+        },
+        {
+          "id": "c",
+          "text": "Removing all bias-attributed words in a dataset."
+        },
+        {
+          "id": "d",
+          "text": "Ensuring the dataset has an equal number of biased and unbiased samples."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Bias - IV [35:49-37:57] - CDA involves re-balancing a corpus by swapping bias attribute words (e.g., he/she) in a dataset."
+    },
+    {
+      "id": "week5-q5",
+      "type": "single",
+      "question": "Which toolkit is used to add programmable guardrails to LLM-based conversational applications to control outputs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "GPT-4"
+        },
+        {
+          "id": "b",
+          "text": "NVIDIA NeMo"
+        },
+        {
+          "id": "c",
+          "text": "CoDi"
+        },
+        {
+          "id": "d",
+          "text": "MAFIA"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias - IV [13:16-15:50] - NVIDIA NeMo is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational applications."
+    },
+    {
+      "id": "week5-q6",
+      "type": "single",
+      "question": "Match the following example to the correct prompt variation.",
+      "options": [
+        {
+          "id": "i",
+          "text": "The image shows a subject with the occupation 'Chief Executive Officer'. Based on the image and this information, what is the gender of the person? (a) male (b) female (c) no preference ii. Looking at this image alone, who would you hire to be the CEO of a Fortune 500 company? (a) person in the image (b) someone else (c) no preference"
+        },
+        {
+          "id": "a",
+          "text": "i -> Informed, ii -> Informed"
+        },
+        {
+          "id": "b",
+          "text": "i -> Informed, ii -> Blind"
+        },
+        {
+          "id": "c",
+          "text": "i -> Blind, ii ->Informed"
+        },
+        {
+          "id": "d",
+          "text": "i -> Blind, ii -> Blind"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias in VLM's [15:05-19:02] - (i) contains the details about the image and explicitly asks the gender, while (ii) gives no extra information about the image."
+    },
+    {
+      "id": "week5-q7",
+      "type": "multiple",
+      "question": "The CrowS-Pairs benchmark includes which of the following types of social bias? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sexual orientation"
+        },
+        {
+          "id": "b",
+          "text": "Socioeconomic status"
+        },
+        {
+          "id": "c",
+          "text": "Political ideology"
+        },
+        {
+          "id": "d",
+          "text": "Physical appearance"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Bias III [14:50-15:40] - Sexual orientation, socioeconomic status, and physical appearance are all part of social bias in the CrowS-Pairs benchmark."
+    },
+    {
+      "id": "week5-q8",
+      "type": "multiple",
+      "question": "Which of the following datasets are specifically designed for measuring gender-related biases? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "BOLD"
+        },
+        {
+          "id": "b",
+          "text": "RedditBias"
+        },
+        {
+          "id": "c",
+          "text": "WinoBias"
+        },
+        {
+          "id": "d",
+          "text": "Winogender"
+        }
+      ],
+      "correctAnswers": [
+        "c",
+        "d"
+      ],
+      "explanation": "Bias - III [33:14-36:50] and Bias - IV [0:00-4:24] - Winogender and WinoBias both measure gender-related bias."
+    },
+    {
+      "id": "week5-q9",
+      "type": "numeric",
+      "question": "You are performing a bias audit on a corpus with total documents. Calculate 𝑁= 1000 the PMI between an identity label and a specific descriptive word . 𝑤𝑖 𝑤𝑗 ● The identity label appears in 100 documents. ● The descriptive word appears in 50 documents. ● Both words co-occur in the same document 20 times.",
+      "options": [],
+      "correctAnswers": [],
+      "answer": "2",
+      "explanation": ""
+    },
+    {
+      "id": "week5-q10",
+      "type": "single",
+      "question": "What is the minimum threshold a word has to appear in the corpus for it to be considered when performing word association analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 times"
+        },
+        {
+          "id": "b",
+          "text": "5 times"
+        },
+        {
+          "id": "c",
+          "text": "10 times"
+        },
+        {
+          "id": "d",
+          "text": "20 times"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Bias Handon Part 1 [5:44-7:08] - Terms that occur less than 10 times in the corpus should not be considered."
+    },
+    {
+      "id": "week5-q11",
+      "type": "single",
+      "question": "What is the \"Gender-bleached\" input method used for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To remove all images containing humans from the training set."
+        },
+        {
+          "id": "b",
+          "text": "To study societal bias in generated output by providing input that blurs gender."
+        },
+        {
+          "id": "c",
+          "text": "To increase the \"Neutral\" accuracy above the random baseline."
+        },
+        {
+          "id": "d",
+          "text": "To ensure the model can only identify objects rather than social attributes."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias in VLM’s [8:41-9:08] - Gender-bleached input to study gender bias in generated output."
+    },
+    {
+      "id": "week5-q12",
+      "type": "single",
+      "question": "What is the main goal of the COBIAS framework when assessing bias?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To automatically remove all stereotypical words from a model's training data."
+        },
+        {
+          "id": "b",
+          "text": "To increase the speed at which a model generates text by reducing the number of words used."
+        },
+        {
+          "id": "c",
+          "text": "To ensure that models only use gender-neutral pronouns like \"they\" in every conversation."
+        },
+        {
+          "id": "d",
+          "text": "To evaluate how much a model relies on specific contexts before deciding if a statement is truly biased."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Bias - IV [17:39-18:46] - COBIAS is designed to understand the concept of inputs by considering the diverse situations in which they may arise."
+    }
+  ]
+}

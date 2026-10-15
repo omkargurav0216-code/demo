@@ -1,0 +1,336 @@
+{
+  "week": 1,
+  "title": "Week 1",
+  "questions": [
+    {
+      "id": "week1-q1",
+      "type": "single",
+      "question": "What does the “Systemic Safety” strategy in the Disaster Risk Equation primarily aim to achieve?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Improve a specific model’s ability to withstand external hazards"
+        },
+        {
+          "id": "b",
+          "text": "Identify and avoid hazards through real-time monitoring"
+        },
+        {
+          "id": "c",
+          "text": "Reduce the likelihood of conflict and overall systemic risks in the environment"
+        },
+        {
+          "id": "d",
+          "text": "Align an agent’s goals with human values"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Risk Part 3 [34:02-34:55] - We can look at the risk equation as a \"systemic” safety, which in turn can generally reduce the risks."
+    },
+    {
+      "id": "week1-q2",
+      "type": "single",
+      "question": "In the context of “Deceptive Alignment,” what is the primary concern regarding model behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The model appears to follow safety guidelines during training but pursues different goals after deployment"
+        },
+        {
+          "id": "b",
+          "text": "The model cannot understand human language due to environmental differences"
+        },
+        {
+          "id": "c",
+          "text": "The model accidentally deletes critical memory during deployment"
+        },
+        {
+          "id": "d",
+          "text": "The model’s safeguards are easily bypassed by simple user prompts"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Risk Part 4 [23:34-24:23] - Deceptive alignment is shown by the example as the model appearing to grab the ball/asnwer a specific way but later doesn’t."
+    },
+    {
+      "id": "week1-q3",
+      "type": "single",
+      "question": "According to the lecture, why is “proxy gaming” considered a failure mode in AI systems?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Agents over-optimize fault metrics, producing outcomes misaligned with true human values"
+        },
+        {
+          "id": "b",
+          "text": "AI systems consume excessive computational resources unnecessarily"
+        },
+        {
+          "id": "c",
+          "text": "AI systems are used to cheat in video games"
+        },
+        {
+          "id": "d",
+          "text": "It results from hardware failure during large-scale simulations"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Risk Part 4 [20:26-22:17] - Future artificial agents could over-optimize and game faulty proxies, which could mean systems aggressively pursue goals and create a world that is distinct from what humans value."
+    },
+    {
+      "id": "week1-q4",
+      "type": "single",
+      "question": "According to the lecture, why might AI systems develop an “instrumental incentive” to seek power?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are explicitly programmed to dominate humans"
+        },
+        {
+          "id": "b",
+          "text": "Power and resources help them pursue their goals more effectively"
+        },
+        {
+          "id": "c",
+          "text": "It is a biological byproduct of the neural network design"
+        },
+        {
+          "id": "d",
+          "text": "They imitate human power-seeking behavior from training data"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Risk Part 4 [9:51-11:50] - By default, suitably strategic and intelligent agents, engaging in suitable types of planning, will have instrumental incentives to gain and maintain various types of power, since this power will help them pursue their objectives more effectively."
+    },
+    {
+      "id": "week1-q5",
+      "type": "single",
+      "question": "What does the term “Treacherous Turns” refer to in AI safety?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Failures caused by biased training data"
+        },
+        {
+          "id": "b",
+          "text": "A system behaving differently once sufficiently capable"
+        },
+        {
+          "id": "c",
+          "text": "Intentional misuse of AI by malicious humans"
+        },
+        {
+          "id": "d",
+          "text": "Over-optimization of proxy objectives"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "AI Risk Part 4 [22:18-23:34] - AI could behave differently once it has the ability to do so."
+    },
+    {
+      "id": "week1-q6",
+      "type": "single",
+      "question": "According to the “Swiss cheese model”, which statement best describes effective safety design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rely on a single, highly robust safety mechanism"
+        },
+        {
+          "id": "b",
+          "text": "Implement safety measures randomly across the system"
+        },
+        {
+          "id": "c",
+          "text": "Use multiple layers of defense so that individual weaknesses are compensated by others"
+        },
+        {
+          "id": "d",
+          "text": "Eliminate safety measures if the AI system is well-designed"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "AI Risk Part 3 [8:18-10:48] - The Swiss Cheese model shows how technical factors can improve organizational safety. Multiple layers of defense compensate for each other’s individual weaknesses, leading to a low overall level of risk."
+    },
+    {
+      "id": "week1-q7",
+      "type": "multiple",
+      "question": "According to the lecture, what are the potential “double-edged sword” risks associated with AI in military applications? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Autonomous weapons targeting humans with high precision"
+        },
+        {
+          "id": "b",
+          "text": "Complete elimination of the need for human strategic decision-making"
+        },
+        {
+          "id": "c",
+          "text": "Lowering the barriers to large-scale violence"
+        },
+        {
+          "id": "d",
+          "text": "Autonomous retaliation systems increasing the risk of rapid escalation"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "explanation": "AI Risk Part 3 [1:02-2:55] - Low-cost automated weapons, such as drone swarms outfitted with explosives, could autonomously hunt human targets with high precision, performing lethal operations for both militaries and terrorist groups and lowering the barriers to large-scale violence."
+    },
+    {
+      "id": "week1-q8",
+      "type": "multiple",
+      "question": "Which of the following are considered speculative hazards of AI? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eroded Epistemics"
+        },
+        {
+          "id": "b",
+          "text": "Enfeeblement"
+        },
+        {
+          "id": "c",
+          "text": "Deceptive Alignment"
+        },
+        {
+          "id": "d",
+          "text": "Hardware Degradation"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Slide 146 in the week’s lecture notes lists speculative hazards and failure modes."
+    },
+    {
+      "id": "week1-q9",
+      "type": "multiple",
+      "question": "The Disaster Risk Equation can be mitigated by (Select all that apply.):",
+      "options": [
+        {
+          "id": "a",
+          "text": "Improving agents’ robustness to withstand hazards"
+        },
+        {
+          "id": "b",
+          "text": "Identifying and mitigating hazards before they cause harm"
+        },
+        {
+          "id": "c",
+          "text": "Increasing the number of parameters to drown out errors"
+        },
+        {
+          "id": "d",
+          "text": "Reducing the severity of inherent model vulnerabilities"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "AI Risk Part 3 [29:45-34:02] - Each component has one way to mitigate/reduce it. Vulnerability: Robustness; Hazard Exposure: Monitoring; Hazard: Alignment."
+    },
+    {
+      "id": "week1-q10",
+      "type": "single",
+      "question": "Which risk refers to humans voluntarily ceding control of socio-economic functions to AI to keep up with the automated world?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eroded Epistemics"
+        },
+        {
+          "id": "b",
+          "text": "Deceptive Alignment"
+        },
+        {
+          "id": "c",
+          "text": "Proxy Gaming"
+        },
+        {
+          "id": "d",
+          "text": "Enfeeblement"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Risk Part 3 [2:57-3:44] - As AIs automate increasingly many tasks, the economy may become largely run by AIs. Eventually, this could lead to human enfeeblement and dependence on AIs for basic needs."
+    },
+    {
+      "id": "week1-q11",
+      "type": "single",
+      "question": "In the risk decomposition framework, which combination of factors would result in the HIGHEST risk from an AI system?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High vulnerability, high hazard exposure, high hazard severity."
+        },
+        {
+          "id": "b",
+          "text": "Low vulnerability, high hazard exposure, low hazard severity."
+        },
+        {
+          "id": "c",
+          "text": "Low vulnerability, low hazard exposure, high hazard severity."
+        },
+        {
+          "id": "d",
+          "text": "High vulnerability, low hazard exposure, high hazard severity."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Slide 107 in the week’s lecture notes shows the risk decomposition equation as a multiplicative (non-linear) equation. Increasing one increases the overall risk."
+    },
+    {
+      "id": "week1-q12",
+      "type": "single",
+      "question": "According to the lecture, which of the following about the AI race is true?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AI systems naturally become safer as they grow more powerful."
+        },
+        {
+          "id": "b",
+          "text": "The AI race reduces the need for regulation and monitoring."
+        },
+        {
+          "id": "c",
+          "text": "It ensures faster AI development that guarantees equal benefits for all nations."
+        },
+        {
+          "id": "d",
+          "text": "AI competition may push to speed up development while giving up oversight."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Risk Part 3 [0:20-1:01] - Competition could push nations and corporations to rush AI development, relinquishing control to these systems."
+    }
+  ]
+}

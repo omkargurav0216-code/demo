@@ -1,0 +1,348 @@
+{
+  "week": 4,
+  "title": "Week 4",
+  "questions": [
+    {
+      "id": "week4-q1",
+      "type": "single",
+      "question": "How does the definition of “bias” in CS/ML differ from Statistics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Statistics focuses on societal values, while CS/ML focuses on mathematical deviations."
+        },
+        {
+          "id": "b",
+          "text": "Statistics defines it as a systematic error in data collection/interpretation, while CS/ML defines it as a systematic favoritism towards certain groups/outcomes."
+        },
+        {
+          "id": "c",
+          "text": "CS/ML focuses on rationality in judgment, while Statistics focuses on algorithmic performance."
+        },
+        {
+          "id": "d",
+          "text": "There is no difference; both define bias as a systematic deviation from rationality."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias - I [18:48-19:41] - ● Statistics: Systematic error in the collection, analysis, or interpretation of data ● CS/ML: Systematic favoritism or discrimination towards certain groups/outcomes"
+    },
+    {
+      "id": "week4-q2",
+      "type": "single",
+      "question": "According to the slides, when does bias become a problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bias is a problem at all times because humans are not perfect."
+        },
+        {
+          "id": "b",
+          "text": "It is only a problem when it occurs in the data collection phase."
+        },
+        {
+          "id": "c",
+          "text": "It is only a problem when it can have a negative impact."
+        },
+        {
+          "id": "d",
+          "text": "It is only a problem when the model is not 100% accurate."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Bias - I [21:50-23:09] - Bias is always there – humans are not perfect. It is only a problem when it can have a negative impact."
+    },
+    {
+      "id": "week4-q3",
+      "type": "single",
+      "question": "Which metric is proposed in the InSaAF study to encapsulate both fairness and accuracy in the Indian legal landscape?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Demographic Parity Score"
+        },
+        {
+          "id": "b",
+          "text": "Perspective API Score"
+        },
+        {
+          "id": "c",
+          "text": "Legal Grounding Score"
+        },
+        {
+          "id": "d",
+          "text": "β-weighted Legal Safety Score"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Bias - II [14:01-14:15] - β-weighted Legal Safety Score (LSSβ), which encapsulates both the fairness and accuracy aspects of the LLM."
+    },
+    {
+      "id": "week4-q4",
+      "type": "single",
+      "question": "What was the primary issue with Microsoft’s chatbot “Tay”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It was unable to process text correctly."
+        },
+        {
+          "id": "b",
+          "text": "It posted unintended offensive tweets due to malicious user intent."
+        },
+        {
+          "id": "c",
+          "text": "It could only generate content related to the United States."
+        },
+        {
+          "id": "d",
+          "text": "It was too slow to respond to users."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias - II [17:46-19:30] - Refer to the article given in the lecture (https://www.theverge.com/2016/3/24/11297050/tay-microsoft-chatbot-racist)"
+    },
+    {
+      "id": "week4-q5",
+      "type": "single",
+      "question": "Analysis of AI-generated images from Midjourney showed which of the following biases regarding specialized roles?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only younger women were shown in specialized roles."
+        },
+        {
+          "id": "b",
+          "text": "Only older men were shown in specialized roles."
+        },
+        {
+          "id": "c",
+          "text": "Older women were frequently depicted as news analysts."
+        },
+        {
+          "id": "d",
+          "text": "Specialized roles always featured diverse racial representation."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Bias - II [21:35-23:40] - For non-specialised job titles, Midjourney returned images of only younger men and women. For specialised roles, both younger and older people were shown – but the older people were always men."
+    },
+    {
+      "id": "week4-q6",
+      "type": "multiple",
+      "question": "According to “The Source of Bias” ML pipeline, at which stage can bias be introduced? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Collecting and labelling data"
+        },
+        {
+          "id": "b",
+          "text": "Training using chosen metrics and objectives"
+        },
+        {
+          "id": "c",
+          "text": "Models deployed in production"
+        },
+        {
+          "id": "d",
+          "text": "Users see an effect"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Source of Bias [0:15-2:28] - Each stage of the pipeline leaves an opening for bias to be introduced."
+    },
+    {
+      "id": "week4-q7",
+      "type": "single",
+      "question": "What does each pair in the CrowS-Pairs dataset consist of?",
+      "options": [
+        {
+          "id": "a",
+          "text": "One stereotype sentence and one neutral sentence"
+        },
+        {
+          "id": "b",
+          "text": "One biased sentence and one unbiased sentence"
+        },
+        {
+          "id": "c",
+          "text": "One stereotype sentence and one opposite stereotype sentence"
+        },
+        {
+          "id": "d",
+          "text": "One stereotype sentence and one less stereotype sentence"
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Bias - I [25:14-28:50] - In this dataset, for each example, the two sentences are minimally distant."
+    },
+    {
+      "id": "week4-q8",
+      "type": "single",
+      "question": "Which of the following is a \"latent\" design choice that can lead to bias in a dataset?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Choosing to use only English-language phrases."
+        },
+        {
+          "id": "b",
+          "text": "Using systematic favoritism towards a specific outcome."
+        },
+        {
+          "id": "c",
+          "text": "Manually editing every data point to be offensive."
+        },
+        {
+          "id": "d",
+          "text": "Refusing to use any AI models in production."
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "A latent design choice is an unstated decision that implicitly introduces bias. Choosing only English-language data is a latent choice because it implicitly excludes non-Western data, leading to a skewed, Western-aligned dataset."
+    },
+    {
+      "id": "week4-q9",
+      "type": "multiple",
+      "question": "Which of the following is the correct setting for contrastive learning? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Irrespective of the sentences, minimise the distance between their embeddings."
+        },
+        {
+          "id": "b",
+          "text": "Irrespective of the sentences, maximise the distance between their embeddings."
+        },
+        {
+          "id": "c",
+          "text": "If sentences are similar, minimise the distance between their embeddings."
+        },
+        {
+          "id": "d",
+          "text": "If sentences are different, minimise the distance between their embeddings."
+        },
+        {
+          "id": "e",
+          "text": "If sentences are different, maximise the distance between their embeddings."
+        },
+        {
+          "id": "f",
+          "text": "If sentences are different, minimise the distance between their embeddings"
+        }
+      ],
+      "correctAnswers": [
+        "c",
+        "e"
+      ],
+      "explanation": "Contrastive learning trains models by pulling similar items together and pushing dissimilar items apart. It achieves this by minimizing the embedding distance for similar sentences and maximizing the distance for different ones."
+    },
+    {
+      "id": "week4-q10",
+      "type": "single",
+      "question": "What is a “stereotype”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A factual statement that applies to all humans."
+        },
+        {
+          "id": "b",
+          "text": "A scientifically proven characteristic."
+        },
+        {
+          "id": "c",
+          "text": "A legal rule used to govern a society."
+        },
+        {
+          "id": "d",
+          "text": "A widely held belief about some group."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "Bias - I [19:47-21:48] - Stereotypes: A widely held belief about some group/entity."
+    },
+    {
+      "id": "week4-q11",
+      "type": "single",
+      "question": "A sentiment-analysis model is trained to predict whether book reviews are positive or negative based on a corpus of user submissions to a popular website. The majority of reviews in the training dataset reflect extreme opinions (reviewers who either loved or hated a book), because people were less likely to submit a review of a book if they did not respond to it strongly. As a result, the model is less able to correctly predict the sentiment of reviews that use more subtle language to describe a book. Which type of bias is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reporting bias"
+        },
+        {
+          "id": "b",
+          "text": "Historical bias"
+        },
+        {
+          "id": "c",
+          "text": "Automation bias"
+        },
+        {
+          "id": "d",
+          "text": "In-group bias"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Please refer to the link for an explanation: https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias"
+    },
+    {
+      "id": "week4-q12",
+      "type": "multiple",
+      "question": "As per the lecture, which of the following is a/are a category of bias? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gender"
+        },
+        {
+          "id": "b",
+          "text": "Race"
+        },
+        {
+          "id": "c",
+          "text": "Scientific Facts"
+        },
+        {
+          "id": "d",
+          "text": "Profession"
+        },
+        {
+          "id": "e",
+          "text": "Currency exchange rates"
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Bias - I [23:10-25:13] -Among the options, gender, race, and profession are considered categories of bias."
+    }
+  ]
+}

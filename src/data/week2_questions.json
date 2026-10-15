@@ -1,0 +1,341 @@
+{
+  "week": 2,
+  "title": "Week 2",
+  "questions": [
+    {
+      "id": "week2-q1",
+      "type": "single",
+      "question": "What are “Black Swans”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frequent events with predictable and minor impacts."
+        },
+        {
+          "id": "b",
+          "text": "Outlier events that often have extreme and unpredictable impacts."
+        },
+        {
+          "id": "c",
+          "text": "Known risks that are intentionally ignored during model training."
+        },
+        {
+          "id": "d",
+          "text": "Events that follow a thin-tailed distribution and have negligible consequences."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Robustness Part 1 [3:36-5:12] - Black swans are events that are outliers, lying outside typical expectations, and often carry extreme impact."
+    },
+    {
+      "id": "week2-q2",
+      "type": "multiple",
+      "question": "Which of the following is considered a “Known Unknown”? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recollection"
+        },
+        {
+          "id": "b",
+          "text": "Closed-ended Questions"
+        },
+        {
+          "id": "c",
+          "text": "Meta-ignorance"
+        },
+        {
+          "id": "d",
+          "text": "Conscious Ignorance"
+        },
+        {
+          "id": "e",
+          "text": "Open-ended Exploration"
+        },
+        {
+          "id": "f",
+          "text": "Self-analysis"
+        }
+      ],
+      "correctAnswers": [
+        "b",
+        "d"
+      ],
+      "explanation": "Robustness Part 1 [19:20-22:05] - “Known Unknowns” are things we are aware of but don’t understand such as known classic risks/conscious ignorance or closed-ended questions."
+    },
+    {
+      "id": "week2-q3",
+      "type": "single",
+      "question": "Which type of distribution shift occurs when the input distribution changes between 𝑃(𝑥) training and testing but remains constant? 𝑃(𝑦|𝑥)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Concept shift"
+        },
+        {
+          "id": "b",
+          "text": "Normalized shift"
+        },
+        {
+          "id": "c",
+          "text": "Covariate shift"
+        },
+        {
+          "id": "d",
+          "text": "Prior probability shift"
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "Robustness Part 2 [23:00-24:53] - P(x) changes between train and test, but p(y|x) does not change in covariate shift."
+    },
+    {
+      "id": "week2-q4",
+      "type": "single",
+      "question": "What is “transferability” in the context of adversarial attacks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The ability to move a model from a secure state to a vulnerable state."
+        },
+        {
+          "id": "b",
+          "text": "The phenomenon where adversarial examples crafted for one model also fool another model."
+        },
+        {
+          "id": "c",
+          "text": "Converting a black-box model into a white-box model."
+        },
+        {
+          "id": "d",
+          "text": "The process of retraining a model on adversarial attacks."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Lecture 8 and 9 Lecture Notes (Slide 70): Adversarial examples crafted for one model, can be used to attack other models is known as transferability."
+    },
+    {
+      "id": "week2-q5",
+      "type": "single",
+      "question": "According to the lecture, what is a common trade-off when using Adversarial Training to improve robustness?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It requires a significantly larger dataset than normal training."
+        },
+        {
+          "id": "b",
+          "text": "It can significantly reduce the accuracy on clean examples."
+        },
+        {
+          "id": "c",
+          "text": "It only works for simple binary classifiers."
+        },
+        {
+          "id": "d",
+          "text": "It requires a low-variance dataset to function effectively."
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "Lecture 8 and 9 Lecture Notes (Slide 78): Currently, adversarial training can reduce accuracy on clean examples by 10%+."
+    },
+    {
+      "id": "week2-q6",
+      "type": "multiple",
+      "question": "Which of the following are challenges associated with direct human ratings when modeling preferences? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Human-in-the-loop evaluation is expensive and time-consuming."
+        },
+        {
+          "id": "b",
+          "text": "Direct ratings require white-box access to the model."
+        },
+        {
+          "id": "c",
+          "text": "Human ratings are always completely objective and free from annotator bias."
+        },
+        {
+          "id": "d",
+          "text": "Human judgments are noisy and miscalibrated."
+        }
+      ],
+      "correctAnswers": [
+        "a",
+        "d"
+      ],
+      "explanation": "RLHF [8:39-13:31] - There are two problems with human ratings: human-in-the-loop is expensive and human judgments are noisy and miscalibrated."
+    },
+    {
+      "id": "week2-q7",
+      "type": "single",
+      "question": "What does Direct Preference Optimization (DPO) represent in the RLHF framework?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RLHF without the reward model"
+        },
+        {
+          "id": "b",
+          "text": "RLHF without human feedback"
+        },
+        {
+          "id": "c",
+          "text": "RLHF without reinforcement learning"
+        },
+        {
+          "id": "d",
+          "text": "RLHF without policy optimization"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "AI Alignment [4:54-6:35] - RLHF – Reward model = Direct Preference Optimization (DPO)"
+    },
+    {
+      "id": "week2-q8",
+      "type": "single",
+      "question": "What is the first step of the RLHF pipeline?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Collecting comparison data and training a reward model."
+        },
+        {
+          "id": "b",
+          "text": "Optimizing a policy against the reward model using reinforcement learning."
+        },
+        {
+          "id": "c",
+          "text": "Collecting demonstration data and training a supervised policy."
+        },
+        {
+          "id": "d",
+          "text": "Performing external white-box auditing of the pretrained model."
+        }
+      ],
+      "correctAnswers": [
+        "c"
+      ],
+      "explanation": "RLHF [3:57-6:38] - The first step in the RLHF pipeline is to collect demonstration data and train a supervised model."
+    },
+    {
+      "id": "week2-q9",
+      "type": "single",
+      "question": "Why is black-box access insufficient for rigorous AI audits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is too expensive for external auditors."
+        },
+        {
+          "id": "b",
+          "text": "It does not allow for human-in-the-loop feedback."
+        },
+        {
+          "id": "c",
+          "text": "It prevents the use of reinforcement learning."
+        },
+        {
+          "id": "d",
+          "text": "It only allows auditors to query the system and observe outputs."
+        }
+      ],
+      "correctAnswers": [
+        "d"
+      ],
+      "explanation": "AI Alignment [24:28-25:13] - Auditors can only query the system and observe its output."
+    },
+    {
+      "id": "week2-q10",
+      "type": "single",
+      "question": "According to the lecture, what does the Kullback–Leibler (KL) divergence penalty prevent in RLHF?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The reward model from becoming too complex"
+        },
+        {
+          "id": "b",
+          "text": "The policy model from diverging too far from the initial pretrained model"
+        },
+        {
+          "id": "c",
+          "text": "Human evaluators from providing biased feedback"
+        },
+        {
+          "id": "d",
+          "text": "The model from over-generalizing"
+        }
+      ],
+      "correctAnswers": [
+        "b"
+      ],
+      "explanation": "RLHF [14:31-16:35] - Kullback–Leibler (KL) divergence is the penalty which prevents us from diverging too far from the pretrained model."
+    },
+    {
+      "id": "week2-q11",
+      "type": "multiple",
+      "question": "Which of the following is true? (Select all that apply.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Extremistan has thin tails while Medicristan has long tails."
+        },
+        {
+          "id": "b",
+          "text": "Extremistan is determined by many small events."
+        },
+        {
+          "id": "c",
+          "text": "Mediocristan is the tyranny of the collective."
+        },
+        {
+          "id": "d",
+          "text": "Extremistan’s impact is potentially scalable."
+        }
+      ],
+      "correctAnswers": [
+        "c",
+        "d"
+      ],
+      "explanation": "Robustness Part 1 [17:22-19:19]"
+    },
+    {
+      "id": "week2-q12",
+      "type": "single",
+      "question": "Identify the equations that can lead to a long-tailed distribution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Idea * student * resources * time"
+        },
+        {
+          "id": "b",
+          "text": "Idea * student + resources * time"
+        },
+        {
+          "id": "c",
+          "text": "Idea + student + resource + time"
+        },
+        {
+          "id": "d",
+          "text": "Idea - student * resource - time"
+        }
+      ],
+      "correctAnswers": [
+        "a"
+      ],
+      "explanation": "Robustness Part 1 [15:17-17:21] - Research output = Ideas X Time X Students X Resources"
+    }
+  ]
+}
